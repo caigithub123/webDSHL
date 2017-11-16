@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>限时秒杀</title>    
+    <!--<link rel="stylesheet" type="text/css" href="./css/index.css">  -->
+    <link rel="stylesheet" type="text/css" href="./css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/addnewlyStyle.css">
+    <link rel="stylesheet" type="text/css" href="./css/common/swiper.min.css">
+
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/lib/swiper.min.js"></script>
+    <script type="text/javascript">
+        //倒计时
+        function ShowCountDown(time,divname){  
+            var now = new Date(); 
+            var endDate = new Date(time); 
+            var leftTime = endDate.getTime()-now.getTime();        //毫秒
+            var leftsecond = parseInt(leftTime/1000);              //秒
+            var d = Math.floor(leftsecond/(60*60*24));             //天
+            var h = Math.floor((leftsecond-d*24*60*60)/3600);      //小时
+            var m = Math.floor((leftsecond-d*24*60*60-h*3600)/60); //分钟
+            var s = Math.floor(leftsecond-d*24*60*60-h*3600-m*60); //秒
+            var cc = document.getElementById(divname); 
+            if( d<0 ) { 
+                cc.innerHTML = "逾期,倒计时已经失效"; 
+            } else { 
+                if( d<10 ) { d = "0" + d } 
+                if( h<10 ) { h = "0" + h } 
+                if( m<10 ) { m = "0" + m } 
+                if( s<10 ) { s = "0" + s } 
+                if( d !=0 ){
+                    cc.innerHTML = "还剩 <i>" + d + "</i> 天 <i>" + h + "</i> : <i>" + m + "</i> : <i>" + s + "</i> 失效"; 
+                }else{
+                    cc.innerHTML = "还剩 <i>" + h + "</i> : <i>" + m + "</i> : <i>" + s + "</i> 失效";
+                }
+            }
+        } 
+
+        // window.setInterval(function(){
+        //     ShowCountDown("2017-02-14 8:59:59",'reserve_djs');
+        // }, 1000);
+    </script>
+</head>
+<body>
+<div class="fixedtop">
+    <header class="swiper-container fix-ms-header">
+        <ul class="swiper-wrapper tap-list">
+            <li class="swiper-slide"><p>10:00</p><p>已结束</p></li>
+            <li class="swiper-slide cur"><p>12:00</p><p>抢购中</p></li>
+            <li class="swiper-slide"><p>14:00</p><p>即将开始</p></li>
+            <li class="swiper-slide"><p>16:00</p><p>即将开始</p></li>
+            <li class="swiper-slide"><p>18:00</p><p>即将开始</p></li>
+        </ul>        
+    </header>
+</div>
+
+
+<header class="fix-ms-header"></header>
+<div class="ms-swiper-Img"><ul><li><a href="#"><img src="./images/seckill_banner.png"></a></li></ul></div>
+<div class="ms-course">
+    <span class="ms-cour-time">距离本场结束剩余<span>01</span>:<span>23</span>:<span>52</span></span>
+    <span class="ms-cour-rule" id="rule-link">活动规则</span>
+</div>
+<div class="seckill-wrap">
+        <div class="seckill-main">                
+            <div class="ms-list" style="display:none;">
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg" style="width:0px;"></span>
+                                    <span class="progressbar-num" inventory="30">已结束</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>
+                            <a href="javascript:void(0);" class="ms-discounts">更多优惠</a>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="ms-list">
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="30">剩余<span>30</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-nowPpurchase">立即抢购</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="100">剩余<span>100</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-nowPpurchase">立即抢购</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="10">剩余<span>10</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-nowPpurchase">立即抢购</a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div class="ms-list" style="display:none;">
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="10">剩余<span>10</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe setSucceed">取消提醒</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="360">剩余<span>360</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe">设置提醒</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="100">剩余<span>100</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe">设置提醒</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-list" style="display:none;">
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="10">剩余<span>10</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe setSucceed">取消提醒</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-list" style="display:none;">
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="10">剩余<span>10</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe setSucceed">取消提醒</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="360">剩余<span>360</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe">设置提醒</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fg-seckill-item">
+                    <div class="fg-ms-Img"><a href="#"><img src="./images/new_arrivalsPic.png"></a></div>
+                    <div class="fg-ms-Info">
+                        <p class="fg-ms-name">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</p>
+                        <p class="fg-ms-txt">规格：750ml*6</p>
+                        <div class="fg-ms-box">
+                            <div class="fg-ms-l">
+                                <div class="fg-ms-bar">
+                                    <span class="progressbar-bg"></span>
+                                    <span class="progressbar-num" inventory="100">剩余<span>100</span>件</span>
+                                </div>
+                                <div class="fg-ms-price">秒杀价:<span class="unitPrice">￥<span>9.9</span></span>&nbsp;<i class="oldPrice">￥99</i></div>
+                            </div>                                
+                            <a href="javascript:void(0);" class="ms-remindMe">设置提醒</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/progressbar.js"></script>
+<script type="text/javascript">
+    var Swiper1 = new Swiper('.fix-ms-header',{
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+        onInit: function(Swiper){
+            if( Swiper.slides.length==1 ){
+                $(".tap-list").find("li").css({"width":"100%"});
+            }else if( Swiper.slides.length==2 ){
+                $(".tap-list").find("li").css({"width":"50%"});
+            }else if( Swiper.slides.length>=3 ){
+                $(".tap-list").find("li").css({"width":"33.3%"});
+            }
+        }
+    })
+    $(".tap-list").on("click","li",function(){
+        var idx = $(this).index();
+        $(this).addClass("cur").siblings().removeClass("cur");
+        $(".seckill-main").find(".ms-list").eq(idx).show().siblings().hide();
+    })
+
+    $(document).ready(function(e) { 
+        $(".fg-ms-box").ProgressBar({
+            box: $(".fg-ms-box"),
+            click: true
+        });
+    });
+</script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript">
+    $("#rule-link").on("click",function(){
+        layer.open({
+            type: 0,
+            title: false,
+            closeBtn: 0,
+            area: ['100%', 'auto'],
+            fix: true,
+            offset: 'b',
+            anim: 2,
+            shade: .5,
+            scrollbar: false,
+            id:"rule-link-dialog",
+            btn: false,  //按钮 
+            content: '<div class="thead-rule">'+
+                        '<span class="title"><i></i>活动规则<i></i></span>'+
+                        '<a href="javascript:void(0);" class="d-btn-close" onclick="layer.closeAll();"></a>'+
+                     '</div>'+
+                     '<div class="d-cont">'+
+                         '<ul class="ui-dc">'+
+                            '<li>即日起，分享邀请好友链接给您的朋友，当您的好友完成平安银行互联网账户的注册，您将获得XX元　现金奖励。</li>'+
+                            '<li>推荐人手机号，必须是店商互联内部员工或商户的手机号码。</li>'+
+                            '<li>平安银行预注册手机号，指申请开通平安银行账户的手机号码，申请通过后将进入平安银行注册页，注册成功的有效用户将对推荐人进行返利</li>'+
+                         '</ul>'+
+                     '</div>'+
+                     '<div class="Copyright">本活动最终解释权归店商互联所有</div>'
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>店商：商品详情</title>
+	<link rel="stylesheet" type="text/css" href="./css/common/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/detail.css">
+    <link rel="stylesheet" type="text/css" href="./css/addnewlyStyle.css">
+
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/lib/swiper.min.js"></script>
+    
+    <script type="text/javascript" src="./js/layer/layer.js"></script>
+</head>
+<body style="padding-bottom: 66px;">
+    
+<div class="scroll-imgs">
+    <div class="tagsale"></div>             
+    <div class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+        </ul>
+        <div class="swiper-pagination"></div>
+    </div>
+    <script type="text/javascript">
+        var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination', 
+                slidesPerView: 'auto', 
+                paginationClickable: true,
+                grabCursor: true,
+                spaceBetween: 0,
+                paginationType : 'fraction',
+                paginationFractionRender: function (swiper, currentClassName, totalClassName) {
+                    return '<span class="'+currentClassName+'"></span>/<span class="'+totalClassName+'"></span>';
+                }
+            });
+    </script>
+    <div class="basic-info">
+    	<div class="pro-title">
+            <a href="#"><span class="pro-txt">法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</span></a>
+        </div>
+        <!-- 增加一行“别名”显示 -->
+        <div class="pro-anotherName">进口拉菲葡萄酒</div>
+    	<div class="pro-price-wrap">
+            <p class="new-price">￥<span class="big-price">990.00</span></p>
+            <span class="pro-activity">限购5件</span>
+            <span class="pro-activity">2倍批购</span>
+        </div>
+    	<div class="pro-retail-price">建议零售价：￥1299.00</div>
+    </div>
+</div>
+<div class="pro-promotion" id="prodPromotion">
+    <span class="p-msg">促销活动</span>    
+    <div class="p-txt"><i class="icon-cx"></i>首单满1000元95折，满2000元93折</div>
+    <span class="p-more"></span> 
+</div>
+
+<div class="pro-promotion" id="detail-service">
+    <span class="serv-txt"><b></b>正品保障</span>
+    <span class="serv-txt"><b></b>免费配送</span>
+    <span class="serv-txt"><b></b>退货保障</span>
+    <a href="javascript:void(0);" class="p-more"></a>
+</div>
+<script type="text/javascript">
+    $("#prodPromotion").on("click",".p-more",function(){
+        layer.open({
+            type: 1,
+            title: false,
+            area: ['100%', '206px'],
+            offset: 'lb',
+            shift: 2,
+            closeBtn: 2, //关闭按钮 
+            scrollbar: false,
+            shadeClose: true, 
+            fix: false,          
+            content: '<div class="dialog-promotion">'+
+                        '<div class="dialg-tit">促销活动</div>'+
+                        '<div class="dialg-cont">'+
+                            '<ul>'+
+                                '<li><em class="c-activity">返券</em><span>消费金额达1000以上，每满100元返5元代金券</span></li>'+
+                                '<li><em class="c-activity">满减</em><span>消费金额达到1000元立减50</span></li>'+
+                                '<li><em class="c-activity">满赠</em><span>满300赠送可口可乐一箱</span></li>'+
+                                '<li><em class="c-activity">首单</em><span>首单满1000立享85折</span></li>'+
+                                '<li><em class="c-activity">返券</em><span>消费金额达1000以上，每满100元返5元代金券</span></li>'+
+                                '<li><em class="c-activity">满减</em><span>消费金额达到1000元立减50</span></li>'+
+                                '<li><em class="c-activity">满赠</em><span>满300赠送可口可乐一箱</span></li>'+
+                                '<li><em class="c-activity">首单</em><span>首单满1000立享85折</span></li>'+
+                            '</ul>'+
+                        '</div>'+
+                     '</div>' 
+        });
+    })
+
+    $("#detail-service").on("click",".p-more",function(){
+        layer.open({
+            type: 1,
+            title: false,
+            area: ['100%', 'auto'],
+            offset: 'lb',
+            shift: 2,
+            closeBtn: false, //关闭按钮 
+            scrollbar: false,
+            shadeClose: true, 
+            fix: false,          
+            content: $(".dialog-service") 
+        });
+    })
+</script>
+
+<div class="pro-details">
+    <p class="d-title"><span>详情介绍</span></p>
+    <ul>
+        <li>
+            <span class="d-name">商品名称</span><em class="d-content">张君雅小妹妹</em>
+        </li>
+        <li>
+            <span class="d-name">规格</span><em class="d-content">1*1<span>（注：6盒/箱）</span></em>
+        </li>
+        <li>
+            <span class="d-name">产地</span><em class="d-content">广东</em>
+        </li>
+        <li>
+            <span class="d-name">保质期</span><em class="d-content">24个月</em>
+        </li>
+    </ul>
+</div>
+
+<div class="pro-details-img">
+    <span>
+        <img src="./images/details-img1.png"><br>
+        <img src="./images/details-img2.png">
+    </span>
+</div>
+<div class="toolbar">    
+    <div class="toolbar-submit">
+        <ul class="ui-bar">
+            <li style="width:24%; margin-left:3%;">
+                <div class="huojia"><a href="#">加入货架</a></div>
+            </li>
+            <li style="width:18%; margin-left:3%;">
+                <div class="mycart"><a href="#"><span><i class="num">2</i></span>购物车</a></div>
+            </li>
+            <li style="width:42%; margin-left:8%;" >
+                <div class="buy-info">
+                    <a href="javascript:void(0);" class="minus-btn"></a>
+                    <span><input type="number" value="1" /></span>
+                    <a href="javascript:void(0);" class="plus-btn"></a>
+                </div> 
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <a href="javascript:void(0);" class="btn-right-info">加入购物车</a>
+    </div>
+</div>
+
+<div class="dialog-service" style="display:none;">
+    <div class="d-thead">购物零风险</div>
+    <div class="d-cont">
+        <h6><b></b>购物零风险</h6>
+        <span class="dc-txt">正规厂商进货，品质有保障！</span>
+    </div>
+    <div class="d-cont">
+        <h6><b></b>购物零风险</h6>
+        <span class="dc-txt">目前店商互联不收取配送费用，五件起送~</span>
+        <span class="dc-txt2">订单金额需满足各分公司最低起送金额</span>
+    </div>
+    <div class="d-cont">
+        <h6><b></b>购物零风险</h6>
+        <span class="dc-txt">店商互联对便利店终端提供<em>10天</em>无理由退货服务！</span>
+        <span class="dc-txt2">酒类商品和食用油类商品除外，所退商品有人为破损除外。</span>
+    </div>
+    <div class="d-btn"><a href="javascript:void(0);" onclick="layer.closeAll();">我知道啦</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>购物车</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+    <script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="fixedtop">
+    <div class="fixWrap"><span id="cartEdit" onclick="EditCart(this)">批量删除</span></div>
+</div>
+<div class="container">
+	<div class="fixWrap"></div>
+	<div class="cartLists">
+        <div class="cartItems">
+            <div class="floor-goods">
+                <div class="subitems">
+                    <div class="behind">
+                        <a href="javascript:void(0);" class="delete-btn">删除</a>
+                        <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                    </div>
+                    <div class="goods">
+                        <div class="icon_select"><input type="checkbox" name="cart"></div>
+                        <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                        <div class="goods_cont">
+                            <p class="g_name"><a href="#">原味原味肉松饼3袋共1140g肉松馅肉松早餐糕原味原味肉松饼3袋共1140g肉松馅肉松早餐糕</a></p>
+                            <div class="g_Info">
+                                <p class="specs">1*12（注：6袋/箱）</p>
+                            </div>
+                            <div class="g_line">
+                                <p class="price">￥36.90</p>
+                                <p class="number">
+                                    <span class="minusBtn minus_grey"></span>
+                                    <input type="tel" class="numInput" value="1" purchaseCount="1" restrictionCount="100">
+                                    <span class="plusBtn"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cartItems">
+            <div class="floor-goods">
+                <div class="head">
+                    <div class="countdown">距活动结束还剩 <span>1天01:52:26</span></div>
+                </div>
+                <div class="subitems">
+                    <div class="behind">
+                        <a href="javascript:void(0);" class="delete-btn">删除</a>
+                        <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                    </div>
+                    <div class="goods">
+                        <div class="icon_select"><input type="checkbox" name="cart"></div>
+                        <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                        <div class="goods_cont">
+                            <p class="g_name"><a href="#"><span>【秒杀】</span>原味原味肉松饼3袋共1140g肉松馅肉松早餐糕...</a></p>
+                            <div class="g_Info">
+                                <p class="specs">1*12（注：6袋/箱）</p>
+                            </div>
+                            <div class="g_line">
+                                <p class="price">￥36.90</p>
+                                <p class="number">
+                                    <span class="minusBtn minus_grey"></span>
+                                    <input type="tel" class="numInput" value="1" purchaseCount="1" restrictionCount="100">
+                                    <span class="plusBtn"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floor-goods">
+                <div class="head">
+                    <div class="countdown">距活动结束还剩 <span>1天01:52:26</span></div>
+                </div>
+                <div class="subitems">
+                    <div class="behind">
+                        <a href="javascript:void(0);" class="delete-btn">删除</a>
+                        <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                    </div>
+                    <div class="goods">
+                        <div class="icon_select"><input type="checkbox" name="cart"></div>
+                        <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                        <div class="goods_cont">
+                            <p class="g_name"><a href="#"><span>【奖品】</span>原味原味肉松饼3袋共1140g肉松馅肉松早餐糕...</a></p>
+                            <div class="g_Info">
+                                <p class="specs">1*12（注：6袋/箱）</p>
+                            </div>
+                            <div class="g_line">
+                                <p class="price">￥36.90</p>
+                                <p class="number">
+                                    <span class="minusBtn minus_grey"></span>
+                                    <input type="tel" class="numInput" value="1" purchaseCount="1" restrictionCount="100">
+                                    <span class="plusBtn"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="cartItems">
+			<div class="head">
+                <div class="title">
+                    <span class="tag">折扣</span>
+                    <p class="text">平台97折</p>
+                    <a class="addItem" href="javascript:void(0);">去凑单</a>
+                </div>				
+			</div>
+            <div class="subitems">
+                <div class="behind">
+                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+                    <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                </div>
+                <div class="goods">
+                    <div class="icon_select"><input type="checkbox" name="cart"></div>
+                    <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                    <div class="goods_cont">
+                        <p class="g_name"><a href="#">良品铺子 原味原味肉松饼3袋共1140g肉松馅肉松早餐糕...</a></p>
+                        <div class="g_Info">
+                            <p class="specs">1*12（注：6袋/箱）</p>
+                        </div>
+                        <div class="g_line">
+                            <p class="price">￥36.90</p>
+                            <p class="number">
+                                <span class="minusBtn minus_grey"></span>
+                                <input type="tel" class="numInput" value="1" purchaseCount="1" restrictionCount="100">
+                                <span class="plusBtn"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="subitems">
+                <div class="behind">
+                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+                    <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                </div>
+                <div class="goods">
+                    <div class="icon_select"><input type="checkbox" name="cart"></div>
+                    <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                    <div class="goods_cont">
+                        <p class="g_name"><a href="#">良品铺子 手撕面包330g（内含约8袋，新老包装交替发货）</a></p>
+                        <div class="g_Info">
+                            <p class="rules"><span>2倍批购</span></p>
+                        </div>
+                        <div class="g_line">
+                            <p class="price">￥15.90</p>
+                            <p class="number">
+                                <span class="minusBtn minus_grey"></span>
+                                <input type="tel" class="numInput" value="2" purchaseCount="2" restrictionCount="100">
+                                <span class="plusBtn"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="cartItems">
+			<div class="head">
+                <div class="title">
+                    <span class="tag">满减</span>
+                    <p class="text">再购159元立享【满300减10】</p>
+                    <a class="addItem" href="javascript:void(0);">去凑单</a>
+                </div>				
+			</div>
+            <div class="subitems">
+                <div class="behind">
+                    <a href="#" class="delete-btn">删除</a>
+                    <a href="#" class="favor-btn">移入<br/>关注</a>
+                </div>
+                <div class="goods">
+                    <div class="icon_select"><input type="checkbox" name="cart"></div>
+                    <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                    <div class="goods_cont">
+                        <p class="g_name"><a href="#"><span>【销售类型】</span>良品铺子 开心果 坚果原味干果休闲炒货98g）</a></p>
+                        <div class="g_Info">
+                            <p class="rules"><span>3倍批购</span><span>X件批购</span><span>限每天X件</span></p>
+                        </div>
+                        <div class="g_line">
+                            <p class="price"><span>￥168.58</span><b>已降￥9.00</b></p>
+                            <p class="number">
+                                <span class="minusBtn"></span>
+                                <input type="tel" class="numInput" value="6" purchaseCount="6" restrictionCount="100">
+                                <span class="plusBtn"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="subitems">
+                <div class="behind">
+                    <a href="javascript:void(0);" class="delete-btn">删除</a>
+                    <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                </div>
+                <div class="goods">
+                    <div class="icon_select"><input type="checkbox" name="cart"></div>
+                    <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                    <div class="goods_cont">
+                        <p class="g_name"><a href="#"><span>【销售类型】</span>良品铺子 开心果 坚果原味干果休闲炒货98g）</a></p>
+                        <div class="g_Info">
+                            <p class="rules"><span>2倍批购</span></p>
+                        </div>
+                        <div class="g_line">
+                            <p class="price">￥168.58</p>
+                            <p class="number">
+                                <span class="minusBtn"></span>
+                                <input type="tel" class="numInput" value="2" purchaseCount="2" restrictionCount="100">
+                                <span class="plusBtn"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+        <div class="cartItems">
+            <div class="floor-goods">
+                <div class="head">
+                    <div class="title">
+                        <span class="tag">套餐</span>
+                        <p class="text">已优惠30元</p>
+                        <a class="addItem" href="javascript:void(0);">查看套餐</a>
+                    </div>
+                </div>
+                <div class="subitems">
+                    <div class="behind">
+                        <a href="javascript:void(0);" class="delete-btn">删除</a>
+                        <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                    </div>
+                    <div class="goods">
+                        <div class="icon_select"><input type="checkbox" name="cart"></div>
+                        <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                        <div class="goods_cont">
+                            <p class="g_name"><a href="#"><span>【套餐】</span>伊利安慕希（原味）205g 1*12伊利安慕希（原味）205g 1*12</a></p>
+                            <div class="g_Info"></div>
+                            <div class="g_line">
+                                <p class="price">￥157.90</p>
+                                <p class="number">
+                                    <span class="minusBtn"></span>
+                                    <input type="tel" class="numInput" value="9" purchaseCount="9" restrictionCount="100">
+                                    <span class="plusBtn"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="floor-goods">
+                <div class="head">
+                   <div class="title">
+                        <span class="tag">套餐</span>
+                        <p class="text">已优惠30元</p>
+                        <a class="addItem" href="javascript:void(0);">查看套餐</a>
+                    </div>
+                </div>
+                <div class="subitems">
+                    <div class="behind">
+                        <a href="javascript:void(0);" class="delete-btn">删除</a>
+                        <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                    </div>
+                    <div class="goods">
+                        <div class="icon_select"><input type="checkbox" name="cart"></div>
+                        <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                        <div class="goods_cont">
+                            <p class="g_name"><a href="#"><span>【套餐】</span>伊利安慕希（原味）205g 1*12伊利安慕希（原味）205g 1*12</a></p>
+                            <div class="g_Info"></div>
+                            <div class="g_line">
+                                <p class="price">￥368.58</p>
+                                <p class="number">
+                                    <span class="minusBtn"></span>
+                                    <input type="tel" class="numInput" value="1" purchaseCount="1" restrictionCount="100">
+                                    <span class="plusBtn"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lose-efficacy">
+            <div class="tit">
+                <span>失效商品</span>
+                <a href="javascript:void(0);" class="empty-goods">清空失效商品</a>
+            </div>
+            <div class="cartItems">
+                <div class="floor-goods">
+                    <div class="subitems">
+                        <div class="behind">
+                            <a href="javascript:void(0);" class="delete-btn">删除</a>
+                            <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                        </div>
+                        <div class="goods">
+                            <div class="icon_select disabled"><input type="checkbox" name="cart" disabled></div>
+                            <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                            <div class="goods_cont">
+                                <p class="g_name grey-name"><a href="#"><span>【套餐】</span>伊利安慕希（原味）205g 1*12伊利安慕希（原味）205g 1*12</a></p>
+                                <div class="g_Info"></div>
+                                <div class="g_line">
+                                    <p class="g_empty">售空/补货中</p>
+                                    <p class="g_similarity"><a href="javascript:void(0);">找相似</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor-goods">
+                    <div class="head">
+                        <div class="title grey-title">
+                            <span class="tag ">套餐</span>
+                            <p class="text">已优惠30元</p>
+                        </div>
+                    </div>
+                    <div class="subitems">
+                        <div class="behind">
+                            <a href="javascript:void(0);" class="delete-btn">删除</a>
+                            <a href="javascript:void(0);" class="favor-btn">移入<br/>关注</a>
+                        </div>
+                        <div class="goods">
+                            <div class="icon_select disabled"><input type="checkbox" name="cart" disabled></div>
+                            <div class="goods_Img"><a href="#"><img src="images/cart_pic.jpg"></a></div>
+                            <div class="goods_cont">
+                                <p class="g_name grey-name"><a href="#"><span>【套餐】</span>伊利安慕希（原味）205g 1*12伊利安慕希（原味）205g 1*12</a></p>
+                                <div class="g_Info"></div>
+                                <div class="g_line">
+                                    <p class="g_empty">售空/补货中</p>
+                                    <p class="g_similarity"><a href="javascript:void(0);">找相似</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <div class="blankLine"></div>
+</div>
+<!-- 底部工具栏 -->
+<div class="toolbar">
+    <div class="toolbar-submit">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/>&nbsp;&nbsp;全选</label>
+        <p class="sum-money">合计：<em>￥0.00</em><span>0种0件；已优惠：￥0.00</span></p>
+        <a href="javascript:void(0);" class="btn-disabled">去结算(0)</a>
+    </div>
+    <div class="toolbar-remove">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/>&nbsp;&nbsp;全选</label>
+        <a href="javascript:void(0);" class="myfavor">移入货架</a>
+        <a href="javascript:void(0);" class="delcart">删除</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/touchCart.js"></script>
+<script type="text/javascript">
+    function EditCart(obj){
+        if($(obj).html()=="批量删除"){
+            $(obj).html('完成');
+            $(".toolbar-remove").show();
+            $(".toolbar-submit").hide();
+        }else{      
+            $(obj).html('批量删除');
+            $(".toolbar-submit").show();
+            $(".toolbar-remove").hide();
+        }
+    }
+
+    $(".empty-goods").on("click",function(){
+        $(this).parent().parent().remove();
+    })
+
+
+    /* 减 */
+    $(".minusBtn").on("click",function(){
+        var input = $(this).parent().find("input");
+        var purchaseCount = parseInt( $(input).attr('purchaseCount') );  //购买数
+        var restrictionCount = parseInt( $(input).attr('restrictionCount') );  //限购数
+
+        if (!purchaseCount||purchaseCount < 1) purchaseCount = 1;
+        if (!restrictionCount||restrictionCount < 1) restrictionCount = 1;
+
+        var num = parseInt( input.val() ) - 1;
+        if (!num||num < 1) num = purchaseCount;
+        if( num > restrictionCount ) num = restrictionCount;
+        input.val( num );
+        $(input).attr('purchaseCount', num);
+        if( input.val() < 2 ){
+            $(input).prev().addClass("minus_grey");
+        }
+    });
+
+    /* 加 */
+    $(".plusBtn").on("click",function(){
+        var input = $(this).parent().find("input");
+        var purchaseCount = parseInt( $(input).attr('purchaseCount') );  //购买数
+        var restrictionCount = parseInt( $(input).attr('restrictionCount') );  //限购数
+    
+        if( !purchaseCount||purchaseCount < 1 ) purchaseCount = 1;
+        if( !restrictionCount||restrictionCount < 1 ) restrictionCount = 1;
+
+        var num = parseInt( input.val() ) + 1;
+        if( !num ) num = 1;
+        if( num > 999 ) num = purchaseCount;
+        if( num > restrictionCount ) num = restrictionCount;
+
+        input.val( num );
+        $(input).attr('purchaseCount', num);
+        if( input.val() > 1 ){
+            $(input).prev().removeClass("minus_grey");
+        }
+    })
+</script>
+</body>
+</html>

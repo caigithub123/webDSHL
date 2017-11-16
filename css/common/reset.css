@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* 默认样式 */
+html, body, div, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, p, a, img, 
+em, i, span, b, table, th, td, strong, form, input, button, textarea, select, 
+pre, code, fieldset, legend, blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif ;
+}
+ul, ol, li { 
+	list-style-type: none;
+}
+html, body {	
+	font-size: 12px; 
+	background-color: #F5F5F5; 
+}
+h1, h2, h3, h4, h5, h6 { 
+	font-weight: normal;
+}
+em, strong, b, i { 
+	font-style: normal; 
+	font-weight: normal;
+}
+a { 
+	outline: none; 
+	text-decoration: none; 
+	color: #666666; 
+	cursor: pointer;
+}
+a:hover { 
+	cursor: pointer;
+}
+a:active, a:focus { 
+	outline:none;
+}
+a, button, input{ 
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+/* 清除浮动 */
+.clear { 
+	display: block; 
+	clear: both; 
+	height: 0; 
+	line-height: 0; 
+	font-size: 0; 
+	vertical-align: middle; 
+	*zoom: 1; 
+}
+ul::after{
+	content: "";
+	display: block; 
+	clear: both; 
+	height: 0; 
+	line-height: 0; 
+	font-size: 0; 
+	vertical-align: middle; 
+	*zoom: 1;
+}
+/* 移除HTML5 input在type="number"时的上下小箭头 */
+input[type="number"]{
+	-moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{ 
+	-webkit-appearance: none !important; 
+	margin: 0;
+}
+
+
+/* 新增 */
+input, textarea, select { 
+	outline: none; 
+	-webkit-appearance: none;	/* -webkit-appearance:none;常用于IOS下移除原生样式 */
+} 
+input:-moz-placeholder { 
+	color: #cacaca; 
+}
+::-webkit-input-placeholder { 
+	color: #cacaca; 
+}
+
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}

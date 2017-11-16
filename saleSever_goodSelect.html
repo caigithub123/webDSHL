@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>商品选择</title>
+	<link rel="stylesheet" type="text/css" href="css/aftersale.css">
+	<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="goodSel_header">
+		<div class="headBox"><a href="javascript:void(0)"><img src="images/ap_ic_tel@2x.png" alt=""></a></div>
+	</div>
+	
+	<!-- 商品详情 -->
+	<div class="goodSel-con">
+		<ul class="gs-main">
+			<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+			<li class="gs-main-right">
+				<a href="javascript:void(0)" class="txt">
+					<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+					<span class="info">1*1 (注：5袋/箱)</span>
+				</a>
+				<span class="gs-price">￥25.00</span>
+				<div class="clear"></div>
+				<div class="numBox">
+					<div class="gs-num">
+						<a href="javascript:void(0)" class="minus-btn"></a>
+						<input type="number" class="num" value="3">
+						<a href="javascript:void(0)" class="plus-btn"></a>
+					</div>
+					<p class="gs-txt">最多可退4件</p>
+				</div>
+				
+			</li>
+		</ul>
+		<ul class="gs-main">
+			<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+			<li class="gs-main-right">
+				<a href="javascript:void(0)" class="txt">
+					<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+					<span class="info">1*1 (注：5袋/箱)</span>
+				</a>
+				<span class="gs-price">￥25.00</span>
+				<div class="clear"></div>
+				<div class="numBox">
+					<div class="gs-num">
+						<a href="javascript:void(0)" class="minus-btn"></a>
+						<input type="number" class="num" value="2">
+						<a href="javascript:void(0)" class="plus-btn"></a>
+					</div>
+					<p class="gs-txt">最多可退4件</p>
+				</div>
+			</li>
+		</ul>
+		
+		<!-- 套餐 -->
+		<div class="totalBox">
+			<ul class="gs-main">
+				<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+				<li class="gs-main-right">
+					<a href="javascript:void(0)" class="txt">
+						<p>【套餐】达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+					</a>
+					<span class="gs-price">￥25.00</span>
+					<div class="clear"></div>
+					<div class="numBox">
+						<div class="gs-num">
+							<a href="javascript:void(0)" class="minus-btn"></a>
+							<input type="number" class="num" value="3">
+							<a href="javascript:void(0)" class="plus-btn"></a>
+						</div>
+						<p class="gs-txt">最多可退4件</p>
+					</div>
+					<div class="setmeal-Up" onclick="packUp(this)"><span>套餐明细</span><img src="images/icon_yellow_down.png"></div>
+				</li>
+			</ul>
+			<!-- 套餐详情 -->
+			<div class="gs-tcBox">
+				<div class="gs-tc">
+					<ul class="gs-main-tc">
+						<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+						<li class="gs-main-right">
+							<i class="gs-line"></i>
+							<a href="javascript:void(0)" class="txt">
+								<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+								<span class="info">1*1 (注：5袋/箱)</span>
+							</a>
+							<span class="gs-price gs-price_gray">x2</span>
+							<div class="clear"></div>
+							
+						</li>
+					</ul>
+					<i class="gs-tc-line"></i>
+				</div>
+				<div class="gs-tc">
+					<ul class="gs-main-tc">
+						<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+						<li class="gs-main-right">
+							<i class="gs-line"></i>
+							<a href="javascript:void(0)" class="txt">
+								<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+								<span class="info">1*1 (注：5袋/箱)</span>
+							</a>
+							<span class="gs-price gs-price_gray">x2</span>
+							<div class="clear"></div>
+							
+						</li>
+					</ul>
+					<i class="gs-tc-line"></i>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 套餐 -->
+		<div class="totalBox">
+			<ul class="gs-main">
+				<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+				<li class="gs-main-right">
+					<a href="javascript:void(0)" class="txt">
+						<p>【套餐】达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+					</a>
+					<span class="gs-price">￥25.00</span>
+					<div class="clear"></div>
+					<div class="numBox">
+						<div class="gs-num">
+							<a href="javascript:void(0)" class="minus-btn"></a>
+							<input type="number" class="num" value="3">
+							<a href="javascript:void(0)" class="plus-btn"></a>
+						</div>
+						<p class="gs-txt">最多可退4件</p>
+					</div>
+					<div class="setmeal-Up" onclick="packUp(this)"><span>套餐明细</span><img src="images/icon_yellow_down.png"></div>
+				</li>
+			</ul>
+			<!-- 套餐详情 -->
+			<div class="gs-tcBox">
+				<div class="gs-tc">
+					<ul class="gs-main-tc">
+						<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+						<li class="gs-main-right">
+							<i class="gs-line"></i>
+							<a href="javascript:void(0)" class="txt">
+								<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+								<span class="info">1*1 (注：5袋/箱)</span>
+							</a>
+							<span class="gs-price gs-price_gray">x2</span>
+							<div class="clear"></div>
+							
+						</li>
+					</ul>
+					<i class="gs-tc-line"></i>
+				</div>
+				<div class="gs-tc">
+					<ul class="gs-main-tc">
+						<li class="gs-main-left"><a href="javascript:void(0)"><img src="images/cart_pic.jpg" alt=""></a></li>
+						<li class="gs-main-right">
+							<i class="gs-line"></i>
+							<a href="javascript:void(0)" class="txt">
+								<p>达利园新上市法式小面包草莓味达利园新上市法式小面包草莓味</p>
+								<span class="info">1*1 (注：5袋/箱)</span>
+							</a>
+							<span class="gs-price gs-price_gray">x2</span>
+							<div class="clear"></div>
+							
+						</li>
+					</ul>
+					<i class="gs-tc-line"></i>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="line-gray"></div>
+
+	<div class="goodSel-more">
+		<a href="javascript:void(0)">需一并退回的赠品<img src="images/icon_dsAarrow.png" alt=""></a>
+	</div>
+
+	<!-- 底部 -->
+	<div class="goodSel-footer">
+	    <div class="toolbar-submit">
+	        <a href="javascript:void(0);" class="btn-next">下一步</a>
+	    </div>
+	</div>
+
+	<script type="text/javascript">
+		function packUp(obj){
+	    	var setmeal = $(obj).parents(".totalBox").find(".gs-tcBox .gs-main-tc");
+	    	if($(obj).html().indexOf("icon_yellow_down")>-1){
+	            setmeal.css({'height':'85px'});
+	            setmeal.find('.gs-main-left').css('border','1px solid #e1e1e1');
+	            setmeal.find('.gs-main-left img').css({'height':'55px','width':'55px'});
+	            $(obj).find("img").attr("src","images/icon_yellow_up.png");
+	         }else {      
+	            setmeal.css({'height':'0px'});
+	            setmeal.find('.gs-main-left').css('border','none');
+	            setmeal.find('.gs-main-left img').css({'height':'0','width':'0'});
+	            $(obj).find("img").attr("src","images/icon_yellow_down.png");		            
+	        }
+	    }
+	    // 加
+	    $('.gs-num').on('click','.plus-btn',function(){
+			var t=$(this).parent().find('input'); 
+			t.val(parseInt(t.val())+1) ;
+			if(parseInt(t.val())>1){
+				$(this).parent().find('.minus-btn-gray').attr('class','minus-btn');
+			}
+		}) 
+		// 减
+		$('.gs-num').on('click','.minus-btn',function(){
+			var t=$(this).parent().find('input'); 
+			t.val(parseInt(t.val())-1) 
+			if(parseInt(t.val())<2){ 
+				t.val(1);
+				$(this).attr('class','minus-btn-gray');
+			}  
+		})  
+	</script>
+
+</body>
+</html>

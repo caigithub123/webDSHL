@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>  	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：搜索</title>  
+
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/search.css">	
+
+    <script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>	
+<div class="wrapper">
+	<!-- 头部 -->
+	<header class="fixed_header">
+		<a href="javascript:history.go(-1);" class="back_btn"><img src="images/icon_back.png"></a>
+		<div class="f_box" style="margin-right:48px;">
+			<input type="text" placeholder="搜商品" id="search_text">
+			<em class="clear_btn" onclick="clearFn();"><img src="./images/icon_clear.png"></em>						
+		</div>
+		<a href="javascript:void(0);" class="scarch_btn">搜索</a>
+	</header>
+	<!-- 头部 -->
+
+	<section class="search_suggest">
+	   <!-- 最近搜索 -->
+		<div class="recent_search">
+			<h2>最近搜索<span class="s_delete" onclick='$(this).parents(".recent_search").hide()'><img src="./images/icon_delete.png"></span></h2>
+			<div class="search_Cont">
+				<a href="#">坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货坚果炒货</a>
+				<a href="#">饼干</a>
+				<a href="#">三只松鼠</a>
+				<a href="#">可口可乐</a>
+				<a href="#">三只松鼠</a>					
+				<a href="#">电池</a>
+				<a href="#">三只松鼠</a>
+				<a href="#">蓝月亮洗衣液</a>
+				<a href="#">康师傅</a>
+				<a href="#">哇哈哈</a>
+			</div>
+		</div>
+	    <!-- 热门搜索 -->
+		<div class="hot_search">
+			<h2>热门搜索</h2>
+			<div class="search_Cont">
+				<a href="#">坚果炒货</a>
+				<a href="#">饼干</a>
+				<a href="#">三只松鼠</a>
+				<a href="#">坚果炒货</a>
+				<a href="#">康师傅</a>					
+				<a href="#">坚果炒货</a>
+				<a href="#">饼干</a>
+				<a href="#">哇哈哈</a>
+				<a href="#">三只松鼠</a>					
+				<a href="#">蓝月亮洗衣液</a>
+				<a href="#">电池</a>													
+				<a href="#">饼干</a>
+				<a href="#">坚果炒货</a>					
+				<a href="#">三只松鼠</a>					
+				<a href="#">电池</a>
+				<a href="#">三只松鼠</a>
+				<a href="#">蓝月亮洗衣液</a>
+				<a href="#">康师傅</a>
+				<a href="#">哇哈哈</a>
+			</div>
+		</div>			
+	</section>
+	<section class="search_result">
+		<ul>
+			<li>
+				<span><a href="#">壹贰叁肆伍陆柒捌玖拾</a></span>
+				<i><a href="#">袋</a></i>
+				<i><a href="#">桶</a></i>
+				<em class="s_record"><a href="#">搜索历史</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面方便面方便面方便面方便面方便面方便面</a></span>
+				<i><a href="#">桶</a></i>
+				<em class="s_record"><a href="#">搜索历史</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便米饭</a></span>
+				<em class="s_record"><a href="#">约30条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面</a></span>
+				<i><a href="#">盒</a></i>
+				<i><a href="#">箱</a></i>
+				<em class="s_record"><a href="#">约30条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便冲饮</a></span>
+				<em class="s_record"><a href="#">约50条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面</a></span>
+				<i><a href="#">桶</a></i>
+				<em class="s_record"><a href="#">约30条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面方便面</a></span>
+				<i><a href="#">袋</a></i>
+				<i><a href="#">桶</a></i>
+				<em class="s_record"><a href="#">约5条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面方便面方便面方便面方便面方便面方便面12</a></span>
+				<i><a href="#">盒</a></i>					
+				<em class="s_record"><a href="#">约16条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便米饭</a></span>
+				<em class="s_record"><a href="#">约30条</a></em>
+			</li>
+			<li>
+				<span><a href="#">方便面</a></span>
+				<i><a href="#">袋</a></i>
+				<i><a href="#">桶</a></i>
+				<em class="s_record"><a href="#">约30条</a></em>
+			</li>
+		</ul>
+	</section>
+</div>
+<script type="text/javascript">   	
+	$("#search_text").keyup(function(){				
+		if( $(this).val()!="" ){
+			$(".clear_btn").show();
+			$('.search_suggest').css({"-webkit-transform":"translate3d(100%,0,0)","transform":"translate3d(100%,0,0)"});			
+			$('.search_result').css({"-webkit-transform":"translate3d(0,0,0)","transform":"translate3d(0,0,0)"});					
+		}else{
+			$(".clear_btn").hide();
+			$('.search_suggest').css({"-webkit-transform":"translate3d(0,0,0)","transform":"translate3d(0,0,0)"});		
+			$('.search_result').css({"-webkit-transform":"translate3d(100%,0,0)","transform":"translate3d(100%,0,0)"});
+		}			
+	});
+
+	function clearFn(){
+		$("#search_text").val("");
+		$(".clear_btn").hide();
+		$('.search_suggest').css({"-webkit-transform":"translate3d(0,0,0)","transform":"translate3d(0,0,0)"});		
+		$('.search_result').css({"-webkit-transform":"translate3d(100%,0,0)","transform":"translate3d(100%,0,0)"});
+	}
+</script>
+</body>
+</html>

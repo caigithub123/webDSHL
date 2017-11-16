@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>签到有礼</title>
+	<link rel="stylesheet" type="text/css" href="css/signIn.css">
+	
+	<script type="text/javascript" src="js/lib/setFontSize.min.js"></script>
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="container" id="signInBox">
+	<div class="" style="height:3.42rem;">
+		<p>当前蚂蚁豆：<b>200</b></p>
+	</div>
+	<div class="signIn-path">
+		<canvas id="canvas" width="320" height="320">您的浏览器不支持 HTML5 canvas 标签！</canvas>
+		<div class="path-items">
+			<div class="Ant-Man" id="Ant-Man"><img src="images/signIn/signIn_ant.png" id="antImg"></div>
+			<ul class="datyMain">
+				<li class="dayOne doing">
+					<span class="dayTxt">第一天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayTwo">
+					<span class="dayTxt">第二天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayThree done">
+					<span class="dayTxt">第三天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayFour">
+					<span class="dayTxt">第四天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>				
+				<li class="dayFive">
+					<span class="dayTxt">第五天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<!-- <li class="daySix">
+					<span class="dayTxt">第六天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="daySeventh">
+					<span class="dayTxt">第七天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var arr1 = [{ moveX: 30, moveY: 10, toX: 10, toY: 0 },
+			{ moveX: 40, moveY: 30, toX: 10, toY: 0 }];
+
+var cvs = document.getElementById("canvas"),
+	ctx = cvs.getContext("2d");
+
+// var s = 0;
+// function pathLine(arr,num){
+//     s = 0;
+//     arr = arr;
+//     timer = setTimeout(function(){
+//         num++;
+//         if(num >= arr.length){
+//             clearTimeout(timer);
+//             return false;
+//         };        
+//         pathLine(arr,num);
+//     },600)
+//     timer2 = setInterval(function(){
+//         s+=1;
+//         if(s==10){
+//             clearTimeout(timer2)
+//         }
+//         ctx.strokeStyle = '#F00';
+//         ctx.lineWidth = 10;
+//         // ctx.lineCap = 'square';
+//         ctx.lineJoin = "round"; 
+//         ctx.beginPath();
+//         if(arr[num].toX == 0){            
+//             ctx.moveTo(arr[num].moveX,arr[num].moveY);
+//             ctx.lineTo(arr[num].moveX,arr[num].moveY-(arr[num].toY)/10*s);
+//         }else{
+//             ctx.moveTo(arr[num].moveX,arr[num].moveY);
+//             ctx.lineTo((arr[num].toX)/10*s+arr[num].moveX,arr[num].moveY);
+
+//         }
+//         ctx.stroke();
+//         ctx.closePath();
+//     },50)
+// }
+
+var lock = true;
+$(".datyMain").on("click",".signIn-Btn",function(){
+	var idx = $(this).parent().index()+1;
+	var AntMan = $("#Ant-Man").find("img");
+
+	var img = new Image();
+    img.src = $(AntMan).attr("src");
+    console.log( img.src )
+
+    img.onload = function() {
+        lastStatus = {
+            "imgX" : -1 * img.width / 2,
+            "imgY" : -1 * img.height / 2,
+            'mouseX' : 0,
+            'mouseY' : 0,
+            'translateX' : canvas.width / 2,
+            'translateY' : canvas.height /2,
+            'scale' : 1.0,
+            'rotate' : 0
+        };
+        drawImgByStatus(canvas.width / 2, canvas.height / 2);
+    };
+
+	ctx.moveTo(30,32);  
+	ctx.lineTo(100,52);
+	ctx.stroke();
+
+	// switch( idx ){
+ //        case 1 :
+ //            pathLine(arr1,0);
+ //        	break;
+ //        case 2 :
+ //            pathLine(arr2,0);
+ //        	break;
+ //        case 3 :
+ //            pathLine(arr3,0);
+ //        	break;
+ //        case 4 :
+ //            pathLine(arr4,0);
+ //        	break;
+ //        case 5 :
+ //            pathLine(arr5,0);
+ //        	break;
+ //    }
+ //    if(lock){
+ //    	return false;
+ //    }
+
+})
+
+
+
+
+	// var cvs = document.getElementById("canvas");
+	// var ctx = cvs.getContext("2d");
+	// var img = document.getElementById("antImg");
+	// ctx.drawImage(img,90,130,90,80,20,20,90,80);
+	// console.log( img )
+</script>
+</body>
+</html>

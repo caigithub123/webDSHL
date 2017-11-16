@@ -1,0 +1,69 @@
+﻿@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+.activityBox{
+	padding: 0 8px;
+}
+.activityBox li{
+	margin-top: 8px;
+}
+.bannerPic{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.bannerPic img{
+	display: block;
+	width: 100%;
+}
+.activityBox li .bannerPic .countdown{
+	display: block;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 22px;
+	font-size: 12px;
+	color: #FFF;
+	background-image: url(../images/activityTimeBg.png);
+	background-size: 100% 100%;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	overflow: hidden;
+}
+.activityBox li p{		
+	height: 27px;
+	line-height: 27px;
+	margin: 0;
+	padding: 0 10px;
+	background-color: #FFF;
+}
+.activityBox li p .theme{
+	float: left;
+	width: 72%;
+	height: 27px;
+	color: #333333;
+    font-size: 12px;
+    overflow: hidden;
+}
+.activityBox li p .prompt{
+	float: right;
+	width: 26%;
+	height: 27px;
+	text-align: right;
+	color: #EF5555;
+    font-size: 12px;
+    overflow: hidden;
+}
+.pro-price {
+    float: left;
+    display: inline-block;
+    height: 26px;
+}
+.pro-info-box .line {
+    bottom: -8px;
+}

@@ -1,0 +1,240 @@
+@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+/* 通用样式 */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+
+/* 订单确认页 */
+.model-box{
+	width: 100%;
+	margin-top: 10px;
+	background-color: #FFFFFF;
+}
+.model-box img{
+	width: 100%;
+	height: 100%;
+}
+.o_giftList{
+	height: 45px;
+	line-height: 45px;
+	font-size: 15px;	
+	padding: 0 13px;
+	color: #000000;	
+	border-top: 1px solid #EFEFEF;
+	background-color: #FFFFFF;	
+}
+.o_giftList a{
+	display: block;
+}
+.o_giftList .odr_giftNum{
+	float: right;
+	display: inline-block;
+	height: 45px;
+	color: #A1A1A2;
+	padding-right: 10px;
+	position: relative;
+}
+.o_item .o_line{
+	height: 1px; 
+    width: 200%;
+    position: absolute;
+    left: 0;
+    top: auto;
+    right: auto;
+    bottom: 0px;
+    background-color: #E0E0E0;
+    border: 0px solid transparent;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform-origin: top left;
+    -webkit-transform-origin: top left;
+}
+
+.m_item{
+	padding: 0 13px;
+	background-color: #FFFFFF;
+	position: relative;
+}
+.m_l{
+	height: auto;	
+	margin-right: 80px;	
+	padding: 14px 0;
+	overflow: hidden;	
+}
+.m_item ul li{	
+	float: left;
+	width: 65px;
+	height: 65px;	
+	border: 1px solid #E2E2E2;
+	position: relative;
+	z-index: 1;
+	margin-right: 12px;
+}
+.m_r{	
+	width: 65px;
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+	font-size: 14px;
+	padding-right: 15px;
+	color: #A1A1A2;	
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	right: 13px;
+}
+/* 支付方式 */
+.pay-deliver{
+	margin-top: 10px;
+	background-color: #fff;
+}
+.pay-deliver ul{
+	margin-left: 10px;
+}
+.pay-deliver li{
+	padding: 5px 0;
+	overflow: hidden;	
+}
+.pay-deliver div{
+	height: 35px;
+	position: relative;	
+}
+.pay-deliver div.deliver-way{	
+	border-top: 1px solid #e0e0e0;
+}
+.pay-deliver p{
+	padding-right: 40px;
+	line-height: 35px; 
+	color: #333333;
+	font-size: 15px; 
+}
+.pay-deliver p span{ 
+	color:#a1a1a2; 
+	font-size: 14px;
+	margin-left: 8px;
+}
+.top-up{
+	display: block;
+	width: 56px;
+	height: 24px;
+	line-height: 24px;
+	color: #EF5555;
+	text-align: center;
+	font-size: 14px;
+	border: 1px solid #EF5555;
+	border-radius: 2px;	
+	position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -12px;
+}
+.down-payment{
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 3px 6px;
+	background-color: #EF9850;
+	border-radius: 2px;	
+}
+.down-payment em{
+	float: left;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/icon_downPayment.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 30px 13px;
+	margin-right: 3px;
+}
+.down-payment img{
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+.pay-deliver div .label-radio{ 
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	margin-top: -10px;
+}
+.order-coupons{
+	max-width: 750px; 
+	min-width: 320px; 
+	margin:auto; 
+	margin-top:10px;
+	background-color:#fff;
+	
+}
+.order-coupons h2{
+	height: 38px; 
+	line-height: 38px; 
+	margin-left: 10px; 
+	margin-right: 13px;
+	font-weight: normal; 
+	font-size: 15px; 
+	color: #333; 
+	position: relative;
+}
+.order-coupons h2 a{
+	float: right;
+	width: 160px;	 
+	margin-right: 20px; 	  
+	text-align: right;
+}
+.order-coupons h2 span.green{
+	display: inline-block;
+	min-width: 46px;  
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding: 0 6px; 
+	margin-left: 10px; 
+	background-color: #85c95a; 
+	font-size: 12px; 
+	color: #ffffff; 
+}
+.order-coupons h2 span.grey{
+	display: inline-block;
+	min-width: 46px;  
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding: 0 6px; 
+	font-size: 12px; 
+	color: #fff; 
+	margin-left: 10px;   
+	background-color: #b9b9b9;
+}
+.order-price{
+	max-width: 750px; 
+	min-width: 320px; 
+	margin: auto; 
+	margin-top: 10px;
+	background-color: #fff;
+}
+.order-price ul li{
+	width:100%; 
+	height:35px; 
+	line-height:35px;	
+}
+.order-price ul li span{ 
+	float: left; 
+	margin-left: 10px; 
+	font-size: 15px; 
+	color: #333;
+}
+.order-price ul li em{ 
+	float: right; 
+	margin-right: 13px; 
+	font-size: 14px; 
+	color: #ef5555;
+}

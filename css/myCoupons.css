@@ -1,0 +1,156 @@
+﻿@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+
+/*== 优惠券页面 coupon-main =====*/
+.coupon-main{
+	min-width:320px; 
+	max-width:750px; 
+	width:100%;
+	margin:0 auto;
+}
+/*优惠券菜单*/
+.coupon-main .cou-nav{
+	z-index:1000;
+	position: fixed;
+	top:0;
+	min-width:320px; 
+	max-width:750px; 
+	width:100%;
+	margin:0 auto;
+	height:44px;
+	line-height: 44px;
+	background-color: #fff;
+	border-bottom: 1px solid #d7d7d7;
+	overflow: hidden;
+}
+.coupon-main .cou-nav li{
+	float: left;
+	width:25%;
+	text-align: center;
+}
+
+.coupon-main .cou-nav a{
+	display: inline-block;
+	color:#555;
+	font-size: 14px;
+	width:100%;
+	position: relative;
+}
+/*选中的菜单样式*/
+.coupon-main .cou-nav li.on a{
+	color:#ef5555;
+}
+.coupon-main .cou-nav li.on i{
+	display: block;
+	width:70%;
+	border-bottom: 2px solid #ef5555;
+	position: absolute;
+	bottom: 1px;
+	left:15%;
+}
+
+.coupons{
+	padding:0 6px;
+	margin-top:55px;
+	margin-bottom: 10px;
+	display: none;
+}
+.cou-list{
+	margin-top: 5px;
+	width:100%;
+	position: relative;
+}
+.cou-list .list-left{
+	width:112px;
+	height:100px;
+	background:url(../images/coupons1.png) no-repeat;
+	background-size:112px 100px;
+	background-color: #f5f5f5;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+.list-left h3{
+	display: inline-block;
+	color: #fff;
+    font-size: 15px;
+    width:100%;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: normal;
+}
+.list-left h3 span{
+	display: inline-block;
+	font-size: 33px;
+}
+.list-left p{
+	width:100%;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+}
+.list-right{
+	border:1px solid #d7d7d7;
+	border-left:none;
+	border-radius: 0 3px 3px 0;
+	height:98px;
+	padding-left: 120px;
+	background: url(../images/coupons2.png) no-repeat right bottom;
+	background-size:65px 47px;
+	background-color: #fff;
+}
+.list-right .list-text{
+	margin-top: 4px;
+	height:90px;
+	position: relative;
+}
+.list-text .lia{
+	font-size: 15px;
+	color: #333;
+}
+.list-text .lib{
+	font-size: 13px;
+	color: #f95447;
+	height:23px;
+	line-height: 23px;
+}
+.list-text .lic{
+	font-size: 11px;
+	color: #888;
+}
+.list-text .lid{
+	font-size: 11px;
+	color: #a1a1a2;
+	position: absolute;
+	bottom: 0px;
+	left:0;
+}
+.list-text .xg{
+	font-size: 11px;
+	color: #a1a1a2;
+}
+/*确认收货后激活*/
+.list-text .jh{
+	font-size: 13px;
+	color: #f95447;
+	position: absolute;
+	bottom: 0px;
+	left:0;
+}
+
+/*灰色优惠券*/
+.cou-list .left_gray{
+	background:url(../images/coupons3.png) no-repeat;
+	background-size:112px 100px;
+	background-color: #f5f5f5;
+}
+.list-text .lib_gray{
+	color: #888;
+}
+

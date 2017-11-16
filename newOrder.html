@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：我的订单</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/newOrder.css"> 
+    
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		//倒计时
+        function ShowCountDown(time,divname){  
+            var now = new Date(); 
+            var endDate = new Date(time); 
+            var leftTime = endDate.getTime()-now.getTime(); 
+            var leftsecond = parseInt(leftTime/1000);
+            var d = Math.floor(leftsecond/(60*60*24)); 
+            var h = Math.floor((leftsecond-d*24*60*60)/3600); 
+            var m = Math.floor((leftsecond-d*24*60*60-h*3600)/60); 
+            var s = Math.floor(leftsecond-d*24*60*60-h*3600-m*60); 
+            var cc = document.getElementById(divname); 
+            if( d<0 ) { 
+                cc.innerHTML = "再次购买"; 
+            } else { 
+                if( d<10 ) { d = "0" + d } 
+                if( h<10 ) { h = "0" + h } 
+                if( m<10 ) { m = "0" + m } 
+                if( s<10 ) { s = "0" + s } 
+                cc.innerHTML = "去支付&nbsp;<i>"+h+"</i>:<i>"+m+"</i>:<i>"+s+"</i>";
+            }
+        }
+	</script>
+</head>
+<body>
+<header class="header-top">
+	<ul class="order-nav">
+		<li class="on"><a href="javascript:void(0);">全部<i></i></a></li>
+		<li><a href="javascript:void(0);">待付款<i></i></a></li>
+		<li><a href="javascript:void(0);">待收货<i></i></a></li>
+		<li><a href="javascript:void(0);">已完成<i></i></a></li>
+	</ul>
+	<div class="clear"></div>
+</header>
+<div class="myorder-main">
+	<!-- 全部 -->
+	<section class="main-item" id="all_orders">
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">待支付</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>					
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥100.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red" id="countDown_1"></a></div>
+				</li>
+			</ul>
+			<script type="text/javascript">
+        		window.setInterval(function(){ShowCountDown("2017-08-22 18:59:59",'countDown_1');}, 1000);
+			</script>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已发货</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="circulation">
+							<li><img src="images/cart_pic.jpg"><span class="pro_icon_tag">5</span></li>
+							<li><img src="images/cart_pic.jpg"></li>
+							<li><img src="images/cart_pic.jpg"><span class="pro_icon_tag">8</span></li>
+							<li><img src="images/cart_pic.jpg"></li>
+							<li><img src="images/cart_pic.jpg"><span class="pro_icon_tag">5</span></li>
+							<li><img src="images/cart_pic.jpg"></li>
+							<li><img src="images/cart_pic.jpg"><span class="pro_icon_tag">8</span></li>
+							<li><img src="images/cart_pic.jpg"></li>
+						</ul>
+					</a>
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥5020.65</span></div>
+					<div class="outlayBtn">
+						<a href="javascript:void(0);" class="btn_grey">订单跟踪</a>
+						<a href="javascript:void(0);" class="btn_red">确认收货</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已完成</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥256.11</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red">再次购买</a></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已取消</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥10000.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red">确认收货</a></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">配货中</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_grey">订单跟踪</a></div>
+				</li>
+			</ul>
+		</div>
+	</section>
+			
+	<!-- 待支付 -->
+	<section class="main-item" id="pay_orders" style="display:none;">
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">待支付</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥100.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red" id="payCountDown_1"></a></div>
+				</li>
+			</ul>
+			<script type="text/javascript">
+        		window.setInterval(function(){ShowCountDown("2017-02-28 18:59:59",'payCountDown_1');}, 1000);
+			</script>
+		</div>
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">待支付</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥100.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red" id="payCountDown_2"></a></div>
+				</li>
+			</ul>
+			<script type="text/javascript">
+        		window.setInterval(function(){ShowCountDown("2017-03-22 18:59:59",'payCountDown_2');}, 1000);
+			</script>
+		</div>
+	</section>
+	
+	<!-- 待收货 -->
+	<section class="main-item" id="get_orders" style="display:none;">
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">处理中</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_grey">订单跟踪</a></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">配货中</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_grey">订单跟踪</a></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已发货</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_grey">订单跟踪</a></div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已发货</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn">
+						<a href="javascript:void(0);" class="btn_grey">订单跟踪</a><a href="javascript:void(0);" class="btn_red">确认收货</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<!-- 已完成 -->
+	<section class="main-item" id="success_orders" style="display:none;">
+		<div class="mc">
+			<ul>
+				<li class="mc-tit">
+					<span class="order-number">订单号：<em>12323444CV9</em></span>
+					<span class="order-status">已发货</span>
+				</li>
+				<li class="mc-list">
+					<a href="#">
+						<ul class="main-content">
+							<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+							<li class="pro-info-box">
+								<div class="pro-name"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></div>
+								<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+							</li>
+						</ul>
+					</a>	
+				</li>
+				<li class="mc-price">
+					<div class="payment">实付总额：<span>￥50.98</span></div>
+					<div class="outlayBtn"><a href="javascript:void(0);" class="btn_red">再次购买</a></div>
+				</li>
+			</ul>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+	$(".header-top ul").on("click",'li',function(){
+		var index=$(this).index();
+		$(this).addClass("on").siblings().removeClass("on");
+		$(".main-item").eq(index).show().siblings().hide();
+	});
+</script>
+</body>
+</html>

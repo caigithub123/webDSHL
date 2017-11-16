@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：商品清单</title>
+    
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/productList.css">
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="pro-cont">
+		<ul class="main-content">
+			<li class="pro-border-img"><img src="images/goodsImg_1.png"></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>		
+				<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">24.00</span></span>
+					<span class="pay-num">x 2</span>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<div class="pro-cont">
+		<ul class="main-content">
+			<li class="pro-border-img"><img src="images/goodsImg_1.png"></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>		
+				<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">24.00</span></span>
+					<span class="pay-num">x 2</span>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<div class="pro-cont">
+		<ul class="main-content">
+			<li class="pro-border-img"><img src="images/cart_pic.jpg"/></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">【套餐】好丽友呀!土豆蜂蜜黄油好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>	
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">24.00</span></span>
+					<span class="pay-num">x 2</span>
+				</p>
+				<div class="setmeal-packUp" onclick="packUp(this)"><span>套餐明细</span><img src="images/icon_yellow_down.png"></div>
+			</li>
+		</ul>
+		<ul class="setmeal-info">
+			<li class="pro-border-img"><img src="images/cart_pic.jpg"/><i class="pro-line"></i></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>
+				<div class="pro-specs">规格：<span>161g*15/袋</span></div>		
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">5.96</span></span>
+					<span class="pay-num">x 1</span>
+				</p>
+			</li>
+			<li class="line"></li>
+		</ul>
+		<ul class="setmeal-info">
+			<li class="pro-border-img"><img src="images/cart_pic.jpg"/><i class="pro-line"></i></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>
+				<div class="pro-specs">规格：<span>161g*15/袋</span></div>		
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">0.00</span></span>
+					<span class="pay-num">x 1</span>
+				</p>
+			</li>
+			<li class="line"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		function packUp(obj){
+	    	var setmeal = $(obj).parents(".pro-cont").find(".setmeal-info");
+	    	if( setmeal.is(":hidden")) {
+	            setmeal.show();
+	            $(obj).find("img").attr("src","images/icon_yellow_up.png");
+	         }else {      
+	            setmeal.hide();
+	            $(obj).find("img").attr("src","images/icon_yellow_down.png");		            
+	        }
+	    }
+	</script>
+	<div class="pro-cont">
+		<ul class="main-content">
+			<li class="pro-border-img"><img src="images/goodsImg_1.png"></li>
+			<li class="pro-info-box">
+				<div class="pro-name">
+					<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+				</div>		
+				<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+				<p class="pro-price">
+					<span class="pay-price">￥<span class="big-price">24.00</span></span>
+					<span class="pay-num">x 2</span>
+				</p>
+			</li>
+		</ul>
+	</div>	
+</div>
+</body>
+</html>

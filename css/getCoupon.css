@@ -1,0 +1,232 @@
+@charset "utf-8";
+@import "common/reset.css";
+/*==reset==*/
+
+html{max-width:750px; min-width:320px;  margin:0 auto; }
+body{max-width:750px; min-width:320px;  margin:0 auto; background-color: #f2f2f2;}
+
+
+.getCoupon-main{
+	width: 100%;
+	margin:0 auto;
+	padding-top: 10px;
+	margin-bottom: 50px;
+}
+.getCoupon{
+	margin:0 10px 10px; 10px;
+	position: relative;
+}
+.getCoupon .gc-left{
+	width:100px;
+	height:80px;
+	padding:10px 10px 10px 3px;
+	background:url(../images/coupon_left.png) no-repeat;
+	background-size:100% 100%;
+	background-color: #f2f2f2;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index:10;
+}
+.gc-left h3{
+	display: inline-block;
+	color: #f95447;
+    font-size: 21px;
+    width:100%;
+    text-align: center;
+    font-weight: normal;
+    height:30px;
+    line-height: 30px;
+   	margin-top: 15px;
+    overflow: hidden;
+}
+.gc-left h3 span{
+	display: inline-block;
+	font-size: 21px;
+	margin-left: -2px;
+}
+.gc-left h3 span i{
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+}
+.gc-left p{
+	width:100%;
+	text-align: center;
+	font-size: 11px;
+	color: #f95447;
+	height: 15px;
+	overflow: hidden;
+}
+.gc-right{
+	padding-left: 120px;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color: #fff;
+	-webkit-border-radius: 0 7px 7px 0;
+	-moz-border-radius: 0 7px 7px 0;
+	border-radius: 0 7px 7px 0;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+}
+
+/*马上领取*/
+.gc-right .get{
+	width: 45px;
+	height: 100%;
+	display: inline-block;
+	background-color: #f95447;
+	-webkit-border-radius: 0 7px 7px 0;
+	-moz-border-radius: 0 7px 7px 0;
+	border-radius: 0 7px 7px 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+.gc-right .get span{
+	display: inline-block;
+	width: 20px;
+	color: #fff;
+	font-size: 14px;
+	margin: 0 auto;
+	padding-top: 12px;
+}
+
+/*已领取*/
+.gc-right .already{
+	width: 44px;
+	height: 44px;
+	background: url(../images/couponed.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	top: 27px;
+	right: 10px;
+}
+
+/*已领完*/
+.gc-right .get_gray{
+	background-color: #ccc;
+}
+.gc-right .get_gray span{
+	padding-top: 23px;
+}
+
+
+.gc-txt{
+	margin-right:60px;
+	padding-top: 12px;
+	height:87px;
+	position: relative;
+}
+.gc-txt p.name{
+	height: 38px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.gc-txt p.time{
+	font-size: 11px;
+	color: #999;
+	line-height: 14px;
+	height:30px;
+	overflow: hidden;
+}
+.gc-txt .bar{
+	width: 90px;
+	height: 5px;
+	border:1px solid #f95447;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	position:absolute;
+	bottom: 10px;	
+	overflow: hidden;
+}
+.bar span{
+	display: block;
+	height: 5px;
+	background: linear-gradient(to right, #f86e66 0%,#fe5293 100%);
+	background: -webkit-linear-gradient(to right, #f86e66 0%,#fe5293 100%);
+	background: -moz-linear-gradient(to right, #f86e66 0%,#fe5293 100%);
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.nomore{
+	width: 100%;
+	text-align: center;
+	color: #ccc;
+	font-size: 13px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.getCoupon-footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+}
+.getCoupon-footer .foot{
+	width: 100%;
+	max-width:750px;
+	min-width:320px;
+	margin: 0 auto;
+	height: 45px;	
+	background: #fff;	
+	border-top: 1px solid #eee; 
+}
+.getCoupon-footer .foot a{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	line-height: 45px;
+	font-size: 14px;
+	color: #333;
+
+}
+.getCoupon-footer .foot i{
+	display: inline-block;
+	height:14px;
+	border-left: 1px solid #333;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-top: -7px;
+}
+
+/*空*/
+.none {
+    height: 200px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.none img {
+    display: inline-block;
+    width: 85px;
+    height: 130px;
+}
+.none p {
+    color: #a1a1a2;
+    font-size: 15px;
+    line-height: 30px;
+}

@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：购物车</title>
+    <link rel="stylesheet" type="text/css" href="./css/myCart.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/addnewlyStyle.css">
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+	<style>
+        .behind { width: 100%; height: 100%; position: absolute;top: 0; right: 0; }
+        .behind a.ui-btn { width: 68px; margin: 0px; float: right; border: none;}
+        .behind a.delete-btn { width: 50px; height: 60px; padding-top: 50px; display: inline-block; background-color: #ef5555; color: #fff; 
+           font-size: 14px; text-align: center; vertical-align: middle;} 
+        .behind a.favor-btn { width: 50px; height: 70px; padding-top: 40px; display: inline-block; background-color: #dcdcdc;  color: #888;
+            font-size: 14px; text-align: center; vertical-align: middle;}
+    </style>
+    <script type="text/javascript">
+        function EditCart(obj){
+            if($(obj).html()=="编辑"){
+                $(obj).html('完成');
+                $(".toolbar-remove").show();
+                $(".toolbar-submit").hide();
+            }else{      
+                $(obj).html('编辑');
+                $(".toolbar-submit").show();
+                $(".toolbar-remove").hide();
+            }
+        }
+        // function CartMenu(){
+        //      if ($(".newCartMenuInfo").is(":hidden")) {
+        //          $(".newCartMenuInfo").show();
+        //      }else{      
+        //         $(".newCartMenuInfo").hide();
+        //     }
+        // }
+     	$(function() {
+            function prevent_default(e) {
+                e.preventDefault();
+            };
+            function disable_scroll() {
+                $(document).on('touchmove', prevent_default);
+            };
+            function enable_scroll() {
+                $(document).unbind('touchmove', prevent_default)
+            };
+
+            var x;
+            $('.shop-cart-list ul.shop-group-item').on('touchstart', function(e) {                
+                // console.log( e.originalEvent.pageX )                     
+                $('.shop-cart-list ul.open').css('left', '0px').removeClass('open') // close em all
+                $(e.currentTarget).addClass('open')
+                x = e.originalEvent.targetTouches[0].pageX // anchor point
+            }).on('touchmove', function(e) {
+                var change = e.originalEvent.targetTouches[0].pageX - x
+                change = Math.min(Math.max(-100, change), 0) // restrict to -100px left, 0px right
+                e.currentTarget.style.left = change + 'px'
+                
+                if (change < -10) disable_scroll() // disable scroll once we hit 10px horizontal slide
+            }).on('touchend', function(e) {
+                var left = parseInt(e.currentTarget.style.left)
+                var new_left;
+                (left < -35) ? ( new_left = '-100px' ) : ( new_left = '0px' );                
+                // e.currentTarget.style.left = new_left
+                $(e.currentTarget).animate({left: new_left}, 200);
+                enable_scroll();
+            });                 
+            $('.delete-btn').on('touchend', function(e) {
+                e.preventDefault()
+                $(this).parents('div.shop-cart').slideUp('fast', function() {
+                    $(this).remove()
+                })
+            })            
+        }); 
+    
+        //倒计时
+        function ShowCountDown(time,divname){  
+            var now = new Date(); 
+            var endDate = new Date(time); 
+            var leftTime = endDate.getTime()-now.getTime();        //毫秒
+            var leftsecond = parseInt(leftTime/1000);              //秒
+            var d = Math.floor(leftsecond/(60*60*24));             //天
+            var h = Math.floor((leftsecond-d*24*60*60)/3600);      //小时
+            var m = Math.floor((leftsecond-d*24*60*60-h*3600)/60); //分钟
+            var s = Math.floor(leftsecond-d*24*60*60-h*3600-m*60); //秒
+            var cc = document.getElementById(divname); 
+            if( d<0 ) { 
+                 cc.innerHTML = "逾期,倒计时已经失效"; 
+            } else { 
+                if( d<10 ) { d = "0" + d } 
+                if( h<10 ) { h = "0" + h } 
+                if( m<10 ) { m = "0" + m } 
+                if( s<10 ) { s = "0" + s } 
+                if( d !=0 ){
+                    cc.innerHTML = "还剩 <i>" + d + "</i> 天 <i>" + h + "</i> : <i>" + m + "</i> : <i>" + s + "</i> 失效"; 
+                }else{
+                    cc.innerHTML = "还剩 <i>" + h + "</i> : <i>" + m + "</i> : <i>" + s + "</i> 失效";
+                }
+            }
+        }         
+    </script>
+</head>
+<body style="padding-bottom:66px;padding-top:55px;">
+<div class="newCartTop"><p><a href="javascript:void(0);" onclick="EditCart(this)">编辑</a></p></div> 
+
+<!-- 特价 -->
+<div class="shop-cart">
+    <div class="shop-cart-title">
+        <h3><em>特价</em><p class="cart-txt"><i></i>已优惠￥3.50</p><a href="#" class="add-on">再逛逛&nbsp;&gt;</a></h3>
+    </div>
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">特价</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li> 
+        </ul>
+    </div>
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">特价</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li> 
+        </ul>
+    </div>
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">特价</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li> 
+        </ul>
+    </div>
+</div>
+<!-- 秒杀 -->
+<div class="shop-cart">
+    <div class="shop-cart-title"><h3><em>秒杀</em>&nbsp;&nbsp;<span id="seckill_djs"></span></h3></div>
+    <script type="text/javascript">
+        window.setInterval(function(){
+                ShowCountDown( ("2017-11-02 17:59:59").replace(/-/g, "/"), "seckill_djs" );
+            }, 1000);
+    </script>   
+	<div class="shop-cart-list">
+		<div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+        	<li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+        	<li class="sg-com">
+        		<div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">秒杀</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+        	</li> 
+        </ul>
+	</div>
+</div>
+
+<!-- 奖品 -->
+<div class="shop-cart">
+    <div class="shop-cart-title"><h3><em>奖品</em>&nbsp;&nbsp;<span id="prize_djs"></span></h3></div>
+    <script type="text/javascript">
+        window.setInterval(function(){ShowCountDown("2017-03-14 17:32:59",'prize_djs');}, 1000);
+    </script>
+    
+	<div class="shop-cart-list">
+		<div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+        	<li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+        	<li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">奖品</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus_disabled"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>        	
+        </ul>		
+	</div>
+</div>
+
+<!-- 预定 -->
+<div class="shop-cart">
+    <div class="shop-cart-title"><h3><em>预定</em>&nbsp;&nbsp;<span id="reserve_djs"></span></h3></div>       
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-tag">预定</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus_disabled"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+
+<!-- 信用支付 -->
+<div class="shop-cart">
+    <div class="shop-cart-title"><h3><em>采呗</em>&nbsp;&nbsp;<span id="credit_djs"></span></h3></div>    
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><span class="corner-credit">信用支付</span><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus_disabled"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+
+<!-- 普通商品 -->
+<div class="shop-cart">    
+	<div class="shop-cart-list">
+		<div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+        	<li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+        	<li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>        	
+        </ul>		
+	</div>
+</div>
+
+<!-- 赠品 -->
+<div class="shop-cart">    
+	<div class="shop-cart-list">
+		<div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+        	<li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+        	<li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>        	
+        </ul>        	
+	</div>
+    <div class="shop-cart-gift"><p><em>赠品</em>&nbsp;&nbsp;达利园法式软面包香奶味360g<span>x1</span></p></div> 
+</div>
+
+<!-- 套餐 -->
+<div class="shop-cart setmeal">
+    <div class="setmeal-title">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/></label>
+        <h3><em>套餐</em>&nbsp;&nbsp;<span>xxx套餐</span>&nbsp;&nbsp;<i>(已优惠:￥6.00)</i></h3>
+    </div>    
+    <div class="shop-cart-list" style="border-top:1px solid #efefef;">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item" style="z-index: 99;">            
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus_disabled"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li> 
+            <li class="smg-line"></li>      
+        </ul>        
+    </div>    
+    <ul class="setmeal-group-item">            
+        <li class="smg-com">
+            <div class="smg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+            <div class="smg-com-cont">
+                <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+            </div>
+            <div class="smg-com-info"><span>￥180.50</span><em>x1</em></div>
+        </li>  
+        <li class="smg-line"></li>         
+    </ul> 
+    <ul class="setmeal-group-item">            
+        <li class="smg-com">
+            <div class="smg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+            <div class="smg-com-cont">
+                <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+            </div>
+            <div class="smg-com-info"><span>￥180.50</span><em>x1</em></div>
+        </li> 
+        <li class="smg-line"></li>
+    </ul>
+    <div class="setmeal_packUp" onclick="packUp(this)"><span>套餐明细</span><img src="images/icon_big_down.png"></div>    
+</div>
+<div class="shop-cart setmeal">
+    <div class="setmeal-title">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/></label>
+        <h3><em>套餐</em>&nbsp;&nbsp;<span>xxx套餐</span>&nbsp;&nbsp;<i>(已优惠:￥6.00)</i></h3>
+    </div>    
+    <div class="shop-cart-list" style="border-top:1px solid #efefef;">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item" style="z-index: 99;">            
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><span class="corner-sale"></span><img src="images/cart_pic.jpg"/></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li> 
+            <li class="smg-line"></li>      
+        </ul>        
+    </div>    
+    <ul class="setmeal-group-item">            
+        <li class="smg-com">
+            <div class="smg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+            <div class="smg-com-cont">
+                <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+            </div>
+            <div class="smg-com-info"><span>￥180.50</span><em>x1</em></div>
+        </li>  
+        <li class="smg-line"></li>         
+    </ul> 
+    <ul class="setmeal-group-item">            
+        <li class="smg-com">
+            <div class="smg-com-img"><a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a></div>
+            <div class="smg-com-cont">
+                <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+            </div>
+            <div class="smg-com-info"><span>￥180.50</span><em>x1</em></div>
+        </li> 
+        <li class="smg-line"></li>
+    </ul>
+    <div class="setmeal_packUp" onclick="packUp(this)"><span>套餐明细</span><img src="images/icon_big_down.png"></div>    
+</div>
+<script type="text/javascript">
+    function packUp(obj){
+        console.log($(obj) )
+        if( $(obj).find("span").html()=="套餐明细" ){
+            $(obj).find("span").html('收起').next("img").attr("src","images/icon_big_up.png");
+            $(obj).parent(".setmeal").find(".smg-line").show();
+            $(obj).parent(".setmeal").find(".setmeal-group-item").css({"display":"block"});
+        }else{      
+            $(obj).find("span").html("套餐明细").next("img").attr("src","images/icon_big_down.png");
+            $(obj).parent(".setmeal").find(".smg-line").hide();
+            $(obj).parent(".setmeal").find(".setmeal-group-item").css({"display":"none"});
+        }
+    }
+</script>
+
+
+<!-- 折扣 -->
+<div class="shop-cart"> 
+    <div class="coupons-title">
+        <h3><em>折扣</em><p>购满N件，享95折，还差N件购满N件，享95折，还差N件</p><a href="#" class="add-on">去凑单&nbsp;></a></h3>
+    </div>   
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/><em class="price_down">已降价3.0元</em></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/><em class="price_down">已降价3.0元</em></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+
+<!-- 满减 -->
+<div class="shop-cart"> 
+    <div class="coupons-title">
+        <h3><em>满减</em><p>满199.00元减100元，还差23.00元，购满N件，享95折，还差N件</p><a href="#" class="add-on">去凑单&nbsp;></a></h3>
+    </div>   
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart"/></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img">
+                    <a href="javascript:void(0);"><img src="images/cart_pic.jpg"/></a>
+                </div>
+                <div class="sg-com-cont">
+                    <a href="javascript:void(0);"><p>达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>
+                </div>
+                <div class="sg-com-info">
+                    <span>￥180.50</span>
+                    <div class="buyInfo">
+                        <a href="javascript:void(0);" class="minus"></a>
+                        <span><input type="tel" class="buy_num" value="1" /></span>
+                        <a href="javascript:void(0);" class="plus"></a>
+                    </div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+
+
+<!-- 失效商品 -->
+<div class="shop-cart">
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart" class="cb-disabled" disabled="disabled" /></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><img src="images/icon_shixiao.png" class="overpic"><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont"><a href="javascript:void(0);">
+                    <p class="on">达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>                    
+                </div>
+                <div class="sg-com-info">
+                    <span class="on">￥180.50</span>
+                    <div class="buyInfo"><a href="javascript:void(0);" class="m_btn_grey">查看相似</a></div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+<div class="shop-cart"> 
+    <div class="shop-cart-list">
+        <div class="behind">
+            <a href="#" class="ui-btn delete-btn">删除</a>
+            <a href="#" class="ui-btn favor-btn">移入<br/>关注</a>
+        </div>
+        <ul class="shop-group-item">
+            <li class="sg-check"><label class="label-checkbox"><input type="checkbox" name="cart" class="cb-disabled" disabled="disabled" /></label></li>
+            <li class="sg-com">
+                <div class="sg-com-img"><a href="javascript:void(0);"><img src="images/icon_shixiao.png" class="overpic"><img src="images/cart_pic.jpg"/></a></div>
+                <div class="sg-com-cont"><a href="javascript:void(0);">
+                    <p class="on">达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g达利园法式小面包香奶味400g</p></a>                    
+                </div>
+                <div class="sg-com-info">
+                    <span class="on">￥180.50</span>
+                    <div class="buyInfo"><a href="javascript:void(0);" class="m_btn_grey">查看相似</a></div>
+                </div>
+            </li>           
+        </ul>       
+    </div>
+</div>
+
+
+<!-- 底部工具栏 -->
+<div class="toolbar">
+    <div class="toolbar-submit">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/>&nbsp;&nbsp;全选</label>
+        <p class="sum-money">合计：<em>￥0.00</em><span>满300元配送</span></p>
+        <a href="javascript:void(0);" class="btn-disabled">去结算(0)</a>
+    </div>
+    <div class="toolbar-remove">
+        <label class="label-checkbox"><input type="checkbox" name="cart"/>&nbsp;&nbsp;全选</label>
+        <a href="javascript:void(0);" class="myfavor">移入货架</a>
+        <a href="javascript:void(0);" class="delcart">删除</a>
+    </div>
+</div>
+
+
+<!-- <div class="newCartMenuInfo">
+    <div class="newCartMenuContent">
+        <div class="newCartMenuBg"></div>
+        <div class="newCartMenu">
+            <ul>
+                <li><a href="javascript:void(0);" class="a1">首页</a></li>
+                <li><a href="javascript:void(0);" class="a2">分类</a></li>
+                <li><a href="javascript:void(0);" class="a3">我的货架</a></li>
+                <li><a href="javascript:void(0);" class="a4">个人中心</a></li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+
+<script type="text/javascript">
+   
+    window.setInterval(function(){
+        // 预定倒计时        
+        ShowCountDown("2017-02-14 8:59:59",'reserve_djs');
+        //信用支付倒计时
+        ShowCountDown("2017-02-14 8:59:59",'credit_djs');
+    }, 1000);
+
+
+    $(".buyInfo").on("focus",".buy_num",function () {
+        $(".buy_num").parent("span").removeClass("on");
+        $(this).parent("span").addClass("on")
+    })
+    $(".buyInfo").on("blur",".buy_num",function () {        
+        $(this).parent("span").removeClass("on");
+    })
+</script>
+</body>
+</html>

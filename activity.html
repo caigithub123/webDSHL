@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>店商：活动专区</title>
+	<link rel="stylesheet" type="text/css" href="./css/activity.css">
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<ul class="activityBox">
+		<li>
+			<a href="activityList.html">
+				<div class="bannerPic">
+					<img src="images/activityBanner1.png">
+					<span class="countdown" id="dayTime_1"></span>
+				</div>
+				<p><span class="theme">即买即送即买满额赠券即买即送即买满额赠券</span><span class="prompt">即买即送</span></p>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<div class="bannerPic">
+					<img src="images/activityBanner2.png">
+					<span class="countdown" id="dayTime_2"></span>
+				</div>
+				<p><span class="theme">即买即送即买满额赠券即买即送即买满额赠券</span><span class="prompt">满额赠券</span></p>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<div class="bannerPic">
+					<img src="images/activityBanner3.png">
+					<span class="countdown" id="dayTime_3"></span>
+				</div>
+				<p><span class="theme">即买即送即买满额赠券即买即送即买满额赠券</span><span class="prompt">全场包邮</span></p>
+			</a>
+		</li>
+	</ul>	
+</div>	
+<script type="text/javascript">
+    //倒计时(只计算天数)
+    function showDayTime(time,divname){  
+        var now = new Date(); 
+        var endDate = new Date(time);
+        var leftTime = endDate.getTime()-now.getTime(); //毫秒
+        var leftsecond = parseInt(leftTime/1000);		//秒
+        var d = Math.floor(leftsecond/(60*60*24));		//天 
+        var cc = document.getElementById(divname); 
+        if( leftsecond > 0 ){
+        	cc.innerHTML = ( d>=1 || d>="1" ) ? ( "剩<i>"+(d+1)+"</i>天" ) : ( "剩1天" );
+        }else{
+        	cc.innerHTML = "已过期"; 
+        }        
+    }
+    window.setInterval(function(){
+    	showDayTime("2017-02-28 23:59:59",'dayTime_1');
+    	showDayTime("2017-03-24 23:59:59",'dayTime_2');
+    	showDayTime("2017-03-01 23:59:59",'dayTime_3');
+    }, 1000);
+</script>
+</body>
+</html>

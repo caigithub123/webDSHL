@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：确认订单</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/confirmOrder.css"> 
+    
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common/swiper.min.css">
+	<script type="text/javascript" src="./js/lib/swiper.min.js"></script>
+	<script type="text/javascript">	
+	$(function () {
+		var swiper = new Swiper('.ui-container', {
+		    pagination: '.swiper-pagination',
+		    grabCursor: true,      //获取光标
+		    slidesPerView: 'auto',
+		    coverflow: {
+		        rotate: 50,
+		        stretch: 0,
+		        depth: 100,
+		        modifier: 1,
+		        slideShadows: true
+		    }
+		});
+	})
+	</script>
+</head>
+<body style="padding-bottom: 66px;">
+<div class="address">
+	<div class="receiver"><span class="r-name">小书包</span><span class="r-phone">13888888888</span></p></div>
+	<div class="item-addr">
+		<i class="location-pic"></i>		
+		<p>北京市海淀区-知春路118号知春大厦A座7层</p>
+	</div>
+</div>	
+
+<div class="model-box">
+	<ul class="m-pro">
+		<li>
+			<div class="main-content">
+				<div class="pro-border-img"><img src="images/goodsImg_1.png"></div>
+				<div class="pro-info-box">
+					<div class="pro-name">
+						<a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+					</div>		
+					<div class="pro-specs">规格：<span>161g*15/袋</span></div>
+					<p class="pro-price">
+						<span class="pay-price">￥<span class="big-price">24.00</span></span>
+						<span class="pay-num">x 1</span>
+					</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="o_giftList"><a href="#">赠品清单<span class="odr_giftNum">3件<i class="addr-point"></i></span></a></div>
+</div>
+
+<div class="model-box">
+	<div class="m_item">		
+		<div class="m_l ui-container">				
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"></li>
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"><span class="pro_icon_tag">5</span></li>
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"></li>
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"><span class="pro_icon_tag">8</span></li>
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"><span class="pro_icon_tag">1</span></li>
+				<li class="swiper-slide"><img src="images/goodsImg_1.png"></li>
+			</ul>
+		</div>		
+		<a href="#"><div class="m_r">共<span>16</span>件<i class="addr-point"></i></div></a>		
+	</div>
+	<div class="o_giftList"><a href="#">赠品清单<span class="odr_giftNum">3件<i class="addr-point"></i></span></a></div>	
+</div>	
+
+<!-- 支付方式 -->
+<div class="pay-deliver">
+	<ul>
+		<li>
+			<div class="pay-way">
+				<p>在线支付<span>余额：<em>￥560.00</em></span></p><label class="label-radio"><input type="radio" checked="checked" name="pay"></label>
+			</div>
+		</li>
+		<li>
+			<div class="deliver-way">
+				<p>货到付款</p>
+				<label class="label-radio"><input type="radio" name="pay"></label>
+			</div>	
+		</li>
+	</ul>
+</div>
+
+<!-- 支付方式 ：首次支付 / 余额不足，充值-->
+<div class="pay-deliver">
+	<ul>
+		<li>
+			<div class="pay-way">
+				<p>在线支付<span>余额：<em>￥560.00</em></span></p>
+				<span class="top-up">充值</span>
+			</div>
+			<span class="down-payment"><em></em>首次支付需要设置支付密码</span>
+		</li>
+		<li>
+			<div class="deliver-way">
+				<p>货到付款</p>
+				<label class="label-radio"><input type="radio" name="pay"></label>
+			</div>	
+		</li>
+	</ul>
+</div>
+
+<!-- 优惠券 -->
+<div class="order-coupons">		
+	<h2>优惠券<a href="#"><span class="green">1张可用</span><i class="addr-point"></i></a></h2>
+	<h2>优惠券<a href="#"><span class="grey">0张可用</span><i class="addr-point"></i></a></h2>
+</div>
+
+<div class="order-price">
+	<ul>
+    	<li><span>商品金额</span><em>￥552.00</em></li>
+        <li><span>优惠金额</span><em>-￥0</em></li>
+        <!-- <li><span>优惠券</span><em>-￥0</em></li>
+        <li><span>运费</span><em>+￥0</em></li> -->
+    </ul>
+</div>
+
+<!-- 底部工具栏 -->
+<div class="toolbar">
+    <div class="toolbar-submit">        
+        <p class="pay-money">应付金额：<em>￥522.00</em></p>
+        <a href="javascript:void(0);" class="btn-right-info">提交订单</a>
+    </div>
+</div>
+</body>
+</html>

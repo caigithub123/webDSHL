@@ -1,0 +1,176 @@
+@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+
+
+.addCardTop{
+	width: 100%; 
+	margin: 0 auto;
+	padding: 10px 0;
+	background-color: #666;
+	// display:none;
+}
+.addCardTop p{
+	font-size: 11px;
+	color: #fff;
+	// line-height: 20px;
+	padding-left: 18px;
+	margin: 0 10px;
+	background: url(../images/addCard/icon_action.png) no-repeat left 2px;
+	background-size: 12px 12px;
+}
+
+.addCardBox{
+	width: 100%;
+	background-color: #fff;
+	overflow:hidden;
+
+}
+.addCardBox p{
+	height: 44px;
+	margin-left: 15px;
+	line-height: 44px;
+	border-bottom: 1px solid #f2f2f2;
+	position: relative;
+}
+.addCardBox .title{
+	display: inline-block;
+	width: 65px;
+	text-align: left;
+	color: #333;
+	font-size: 14px;
+}
+.addCardBox p input{
+	width:60%;
+	height:20px;
+	line-height: 20px;
+	outline: none;
+	color: #666;
+	padding: 10px 0;
+	font-size:13px;
+	border:none;
+}
+.addCardBox .warn{
+	height: 35px;
+	font-size:13px;
+	color: #f95447;
+	line-height: 35px;
+	padding-left: 30px;
+	background:url(../images/addCard/order_ic_ts.png) no-repeat 10px center;
+	background-size: 14px 14px;
+	margin-left: 0px;
+}
+.addCardBox .idCard {
+	border-bottom:none;
+}
+
+.cardLine{
+	width: 100%;
+	background-color: #f5f5f5;
+	height: 10px;
+}
+.bankName a{
+	float: right;
+	margin-right: 15px;
+}
+.bankName a img{
+ 	width: 8px;
+ 	height: 12px;
+ 	vertical-align: middle;
+}
+.addCardBox .phone{
+	display: inline-block;
+	width:20px;
+	height:15px;
+	position: absolute;
+	top:50%;
+	right: 15px;
+	margin-top: -7px;
+	background: url(../images/addCard/bank_ic_camera.png) no-repeat;
+	background-size: cover;
+}
+
+.addCardBox .phone input{
+	display:inline-block;
+	width:20px;
+	height:15px;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity: 0;
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+	padding: 0;
+}
+
+.addCardBox .phoneNumber{
+	border-bottom: none;
+}
+.clearAll{
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top:50%;
+	right: 42px;
+	margin-top: -7px;
+	display:none;
+}
+.phoneNumber .clearAll,.cardName .clearAll{
+	right: 15px;
+}
+
+.cardBtn{
+	margin: 15px;
+	height: 44px;
+	line-height: 44px;
+	background-color: #feddda;
+	border-radius: 3px;	
+	-webkit-border-radius: 3px;	
+	-moz-border-radius: 3px;	
+
+}
+.cardBtn a{
+	display:inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+.cardBtn_Red{
+	background-color: #f95447;
+}
+
+
+.identify{
+	width: 100%;
+	height:100%;
+	overflow: hidden;
+	position:relative;
+}
+.identify img{
+	width:100%;
+	height:100%;
+	display: block;
+}
+.identify p{
+	text-align:center;
+	font-size:0.3rem;
+	color: #fff;
+	position:absolute;
+	top:6.4rem;
+	right: -300px;
+	transform:rotate(90deg);
+}
+
+
+@media (max-width: 360px) and (min-width: 320px){
+	.addCardBox p input{
+		font-size: 12px;
+	}
+}

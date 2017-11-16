@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>签到有礼</title>
+	<link rel="stylesheet" type="text/css" href="css/signIn.css">
+	
+	<script type="text/javascript" src="js/lib/setFontSize.min.js"></script>
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="./js/layer/layer.js"></script>
+</head>
+<body>
+<div class="container" id="signInBox">
+	<div class="signIn-thead">
+		<p class="antBean">当前蚂蚁豆：<b>600</b></p>
+		<img src="images/signIn/signIn_title.png"  class="title">
+		<p class="text">连续签到领蚂蚁豆！</p>
+	</div>
+	<div class="signIn-path">
+		<div class="path-items">
+			<div class="Ant-Man" id="Ant-Man"><img src="images/signIn/signIn_ant-1.png" id="antImg"></div>
+			<ul class="datyMain">
+				<li class="dayOne doing">
+					<span class="dayTxt">第一天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayTwo">
+					<span class="dayTxt">第二天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayThree">
+					<span class="dayTxt">第三天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="dayFour">
+					<span class="dayTxt">第四天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>				
+				<li class="dayFive">
+					<span class="dayTxt">第五天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="daySix">
+					<span class="dayTxt">第六天</span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+				<li class="daySeventh">
+					<span class="dayTxt">第七天</span>
+					<span class="redPacket"></span>
+					<span class="signIn-Btn">点击签到</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="signIn-rule">
+		<img src="images/signIn/signIn_ruleTit.png" class="ruleTitle">
+		<ul class="ruleText">
+			<li>1. 每日签到，+20蚂蚁豆 </li>
+			<li>2. 连续签到7天，+300蚂蚁豆 </li>
+			<li>3. 如果中断，按每日签到实际天数送蚂蚁豆 </li>
+			<li>4. 如果完成一个连续签到周期，则重新开始下一周期。</li>
+		</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+var arr1 = [{moveX: 2.12, moveY: 0}];
+var arr2 = [{moveX: 4.8, moveY: .96}];
+var arr3 = [{moveX: 6.06, moveY: 3.14}];
+var arr4 = [{moveX: 4.52, moveY: 3.52}];
+var arr5 = [{moveX: 2.26, moveY: 2.9}];
+var arr6 = [{moveX: 2.3, moveY: 4.96}];
+var arr7 = [{moveX: 4.6, moveY: 5.6}];
+
+/*
+var s = 0;
+var num = 0;
+function line(arr,Img,dayItems){
+	s = 0;
+	num = 0;
+	arr = arr;
+    timer = setTimeout(function(){
+        num++;
+        if(num >= arr.length){
+            clearTimeout(timer);
+            layer.tips('签到完成！', dayItems, {
+	        	time: 0,
+				tips: [1, '#E6C3FC']
+			});
+			$(dayItems).next().addClass("doing");
+            return false;
+        };        
+        line(arr,num);
+    },1000)
+
+    timer2 = setInterval(function(){
+        s+=1;
+        if(s==10){
+            clearTimeout(timer2)
+        }
+        $(Img).animate({"left": arr[num].moveX+"rem", "top": arr[num].moveY+"rem"})
+        	.animate({"left": arr[num].moveX+"rem", "top": arr[num].moveY+"rem"});
+    },50)
+}
+*/
+
+$(".datyMain").on("click",".signIn-Btn",function(){
+	var dayItems = $(this).parent(),
+		Img = $(dayItems).parents(".path-items").find("#Ant-Man"),
+		idx = dayItems.index()+1;
+	var antBean = $(".antBean").find("b"),
+		text = $(".text");
+	dayItems.addClass("done").removeClass("doing");
+/*
+	switch( idx ){
+	    case 1 :
+	    	line(arr1,Img,dayItems);
+	    	break;
+	    case 2 :
+	    	line(arr2,Img,dayItems);
+	    	break;
+	    case 3 :
+	    	line(arr3,Img,dayItems);
+	    	break;
+	    case 4 :
+	    	line(arr4,Img,dayItems);
+	    	break;
+	    case 5 :
+	    	line(arr5,Img,dayItems);
+	    	break;
+	    case 6 :
+	    	line(arr6,Img,dayItems);
+	    	break;
+	}
+*/
+
+
+	switch( idx ){
+	    case 1 :
+	    	$(Img).stop().animate({"top": 0+"rem","left": 2.12+"rem"},500,function(){
+	    		layer.tips('签到完成！', dayItems, {
+                	time: 0,
+					tips: [2, '#E6C3FC']
+				});
+				$(dayItems).next().addClass("doing");
+	    	});
+            $(text).html("第1天签到完成，获得20个豆");
+	    	break;
+	    case 2 :
+	        $(Img).stop().animate({"top": .96+"rem","left": 4.8+"rem"},700,function(){
+	        	layer.tips('签到完成！', dayItems, {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+				$(dayItems).next().addClass("doing");
+	        });
+            $(text).html("已连续签到2天");
+	    	break;
+	    case 3 :
+	        $(Img).animate({"top": 1.82+"rem","left": 6.2+"rem"},400,function(){
+				$(Img).find("img").attr("src","images/signIn/signIn_ant-2.png");
+	        }).animate({"top": 3.14+"rem","left": 6.06+"rem"},400,function(){
+	        	layer.tips('签到完成！', dayItems, {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+				$(dayItems).next().addClass("doing");
+	        });
+            $(text).html("已连续签到3天");
+	    	break;
+	    case 4 :
+	        $(Img).stop().animate({"top": 3.8+"rem","left": 5.4+"rem"},300)
+	        	.animate({"top": 3.52+"rem","left": 4.52+"rem"},300,function(){
+	        		layer.tips('签到完成！', dayItems, {
+	                	time: 0,
+						tips: [1, '#E6C3FC']
+					});
+					$(dayItems).next().addClass("doing");
+	        	});
+            $(text).html("已连续签到4天");
+
+	    	break;
+	    case 5 :
+	        $(Img).stop().animate({"top": 2.9+"rem","left": 2.26+"rem"},700,function(){
+	        	layer.tips('签到完成！', dayItems, {
+                	time: 0,
+					tips: [4, '#E6C3FC']
+				});
+				$(dayItems).next().addClass("doing");
+	        });
+            $(text).html("已连续签到5天");
+	    	break;
+	    case 6 :
+	        $(Img).stop().animate({"top": 2.6+"rem","left": 1.48+"rem"},200,function(){
+	        	$(Img).find("img").attr("src","images/signIn/signIn_ant-1.png")
+	        }).animate({"top": 4.5+"rem","left": .6+"rem"},200)
+	       	.animate({"top": 4.96+"rem","left": 2.3+"rem"},200,function(){
+				layer.tips('签到完成！', dayItems, {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+				$(dayItems).next().addClass("doing");
+	       	});
+            $(text).html("已连续签到6天");
+	    	break;
+	    case 7 :
+	        $(Img).stop().animate({"top": 5.6+"rem","left": 4.6+"rem"},700,function(){
+	        	layer.tips('任务完成！', dayItems, {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+	        });
+	        setTimeout(function(){
+				layer.open({
+					type: 1,
+					title: false,
+					skin: 'layui-Complete', //样式类名
+					closeBtn: 0, //不显示关闭按钮
+					anim: 2,
+					shade: 0.6,
+					scrollbar: false,
+					shadeClose: true, //开启遮罩关闭
+					content: '<img src="images/signIn/signIn_MissionComplete.png">'
+				});
+            },800)
+            $(text).html("任务完成，您获得了300个豆");
+	    	break;
+	}
+})
+</script>
+
+<script type="text/javascript">
+/*
+var lock = true;
+$(".datyMain").on("click",".signIn-Btn",function(){
+	var antBean = $(".antBean").find("b");
+	var text = $(".text");
+
+	
+	$(this).parent().addClass("done").removeClass("doing");
+	var AntMan = $(this).parents(".path-items").find("#Ant-Man");
+
+	moveFn( this,AntMan );
+});
+
+function moveFn(that,Img){
+	var idx = $(that).parent().index()+1;
+	// var itemTop = parseFloat( $(that).parent().offset().top, 10),
+	// 	itemLeft = parseFloat( $(that).parent().offset().left, 10),
+	// 	itemOH = parseFloat( $(that).outerHeight(), 10),
+	// 	itemOW = parseFloat( $(that).outerWidth(), 10);
+
+	// var imgTop = parseFloat( $(Img).offset().top, 10),
+	// 	imgLeft = parseFloat( $(Img).offset().left, 10);
+
+	// var winW = parseFloat($(window).width()),
+	// 	winH = parseFloat($(window).height()),
+ //        winScrollTop = parseFloat($(window).scrollTop(), 10);
+
+	// console.log( winW, winH, imgTop,itemLeft,itemOH, );
+
+	// console.log( imgTop , imgLeft )
+	// var t = itemTop - imgTop + itemOH/2;
+	// var l = itemLeft - imgLeft + itemOW/2;
+
+
+	switch( idx ){
+	    case 1 :
+	        $(Img).stop().animate({"top": 0+"px","left": 2.12+"rem"});
+	        setTimeout(function(){
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [2, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 2 :
+	        $(Img).stop().animate({"top": .96+"rem","left": 4.8+"rem"});
+	        setTimeout(function(){
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 3 :
+	        $(Img).stop().animate({"top": 3.14+"rem","left": 6.06+"rem"});
+	        setTimeout(function(){
+	        	$(Img).find("img").attr("src","images/signIn/signIn_ant-2.png");
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 4 :
+	        $(Img).stop().animate({"top": 3.52+"rem","left": 4.52+"rem"});
+	        setTimeout(function(){
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 5 :
+	        $(Img).stop().animate({"top": 2.9+"rem","left": 2.26+"rem"});
+	        setTimeout(function(){
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [4, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 6 :
+	        $(Img).stop().animate({"top": 4.96+"rem","left": 2.3+"rem"});
+	        $(Img).find("img").attr("src","images/signIn/signIn_ant-1.png");
+	        setTimeout(function(){
+                layer.tips('签到完成！', $(that).parent(), {
+                	time: 0,
+					tips: [2, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	    case 7 :
+	        $(Img).stop().animate({"top": 5.6+"rem","left": 4.6+"rem"});
+	        setTimeout(function(){
+                layer.tips('任务完成！', $(that).parent(), {
+                	time: 0,
+					tips: [1, '#E6C3FC']
+				});
+            },600)
+	    	break;
+	}
+}
+*/
+</script>
+</body>
+</html>

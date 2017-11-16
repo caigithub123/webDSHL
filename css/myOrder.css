@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+/* 通用样式 */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+.header-top{
+	width: 100%;
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+	height:45px;
+	background:#fff;
+	position: fixed;
+	top: 0;
+	left: auto;
+	right: auto;
+	z-index: 10000;
+}
+.header-top .order-nav{
+	min-width:320px; 
+	max-width:750px; 
+	width: 100%;	
+	margin: 0 auto;
+	height: 44px;
+	line-height: 44px;
+	background-color: #fff;
+	border-bottom: 1px solid #d7d7d7;
+	overflow: hidden;
+}
+.header-top .order-nav li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+.header-top .order-nav li a{
+	display: inline-block;
+	color:#555;
+	font-size: 14px;
+	width:100%;
+	position: relative;
+}
+/*数量*/
+.header-top .order-nav li em{
+	font-size: 13px;
+}
+/*选中的菜单样式*/
+.order-nav li.on a{
+	color:#ef5555;
+}
+.order-nav li.on i{
+	display: block;
+	width: 70%;
+	border-bottom: 2px solid #ef5555;
+	position: absolute;
+	bottom: 0;
+	left: 15%;
+	right: 15%;
+}
+
+
+.myorder-main{
+	padding-top: 46px;
+	padding-bottom: 15px;
+}
+.main-item .mc{
+	margin-top: 10px;
+	background-color: #FFF;
+}
+.mc-tit{
+	height: 40px;
+	font-size: 13px;
+	border-bottom: 1px dashed #D4D4D4;
+	position: relative;
+	margin: 0;
+}
+.order-unPay-bg{
+	display: block;
+	width: 4px;
+	height: 18px;
+	background-color: #F46F74;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -9px;
+}
+.order-unGet-bg{
+	display: block;
+	width: 4px;
+	height: 18px;
+	background-color: #F6B002;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -9px;
+}
+.order-cancel-bg{
+	display: block;
+	width: 4px;
+	height: 18px;
+	background-color: #999;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -9px;
+}
+.order-success-bg{
+	display: block;
+	width: 4px;
+	height: 18px;
+	background-color: #83D046;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -9px;
+}
+.order-number{
+	float: left;
+	display: inline-block;	
+	line-height: 40px;
+	margin-left: 13px;
+	color: #999;
+	overflow: hidden;
+}
+.order-number em{
+	display: inline-block;
+	max-width: 180px;
+	color: #555;
+}
+.order-unPay{
+	display: inline-block;
+	color: #EF5555;
+	height: 20px;
+	font-size: 14px;
+	padding: 2px 12px;
+	border-radius: 20px;
+	background-color: #FDEAEA;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	margin-top: -12px;
+	right: 13px;
+}
+.order-unGet{
+	display: inline-block;
+	color: #F6B002;
+	height: 20px;
+	font-size: 14px;
+	padding: 2px 12px;
+	border-radius: 20px;
+	background-color: #FEF3D9;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	margin-top: -12px;
+	right: 13px;
+}
+.order-cancel{
+	display: inline-block;
+	color: #999;	
+	height: 20px;
+	font-size: 14px;
+	padding: 2px 12px;
+	border-radius: 20px;
+	background-color: #F0F0F0;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	margin-top: -12px;
+	right: 13px;
+}
+.order-success{
+	display: inline-block;
+	color:#83d046;	
+	height: 20px;
+	font-size: 14px;
+	padding: 2px 12px;
+	border-radius: 20px;
+	background-color: #EDF8E3;
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	margin-top: -12px;
+	right: 13px;
+}
+.mc-time{
+	height: 35px;
+	padding: 0 13px;
+}
+
+.orderTime-Cancel {
+    line-height: 40px;
+	font-size: 13px;
+	color: #999;
+    position: relative;
+    padding: 0 15px 0 32px;
+}
+.orderTime-Cancel::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icon_downPayment.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 30px 13px;
+    margin-right: 3px;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    left: 13px;
+}
+.orderTime-Cancel .count-down{
+	color: #F6B002;
+}
+
+.mc-list{	
+	margin-top: 5px;
+	background-color: #FAFAFA;
+	padding-left: 13px;
+}
+.main-content{
+	padding-top: 13px;
+}
+.mc-payment{
+	height: 45px;
+	line-height: 45px;
+	text-align: right;
+	padding: 0 13px;
+	border-bottom: 1px solid #F3F3F3;
+}
+.mc-payment p{
+	font-size: 14px;
+	color: #555;
+}
+.mc-payment p span{
+	color: #EF5555;
+}
+.mc-button{
+	height: 45px;
+}
+.outlay-btn{
+	float: right;
+	padding: 8px 13px 7px 0;
+}
+.outlay-btn a{
+	display:inline-block;
+	min-width: 54px;
+	font-size: 13px; 
+	height: 26px; 
+	line-height: 26px; 
+	text-align: center;
+	padding: 0px 11px;
+	border-radius: 3px; 
+	margin-left: 10px; 
+}
+.outlay-btn a.btn_red{
+	color:#de1919;  
+	border:1px solid #de1919;
+}
+.outlay-btn a.btn_grey{ 
+	color:#333;
+	border:1px solid #d7d7d7;
+}
+.m_l {
+    height: 104px;   
+    padding-right: 10px; 
+    overflow: hidden;
+}
+.m_l ul li {
+    float: left;
+    width: 74px;
+    height: 74px;
+    margin: 14px 0;
+    border: 1px solid #E2E2E2;
+    position: relative;
+    z-index: 1;
+    margin-right: 12px;
+}
+.m_l ul li img{
+    width: 100%;
+    height: 100%;
+}
+.setmeal-packUp{
+    font-size: 14px;
+    color: #F6B002;
+}
+.setmeal-packUp img {
+    width: 12px;
+    height: 8px;
+    margin-left: 3px;
+}
+.setmeal-info{
+	height: auto;
+	position: relative;
+}
+.setmeal-info .pro-border-img {
+    width: 54px;
+    height: 54px;
+    margin: 0 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.setmeal-info .pro-info-box::before{
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #E0E0E0;
+	position: absolute;
+	top: -12px;
+	left: 0;
+}
+.setmeal-info .pro-info-box .l-pro {
+    margin-right: 63px;
+    position: relative;
+}
+.setmeal-info .pro-info-box .r-pro {
+    width: 60px;
+    height: 69px;
+    text-align: right;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 0;
+}
+.setmeal-info .r-pro .r-p-number {
+    font-size: 14px;
+    color: #999;
+}
+
+.setmeal-info i.pro-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #e1e1e1;
+    left: 38px;
+    top: -25px;
+}

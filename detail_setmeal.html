@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+	<title>店商：商品套餐详情</title>
+	<link rel="stylesheet" type="text/css" href="./css/common/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/detail.css">
+
+	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/lib/swiper.min.js"></script>
+
+    <script type="text/javascript" src="./js/layer/layer.js"></script>
+
+<body style="padding-bottom: 66px;">
+<div class="scroll-imgs">    
+    <div class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>
+            <li class="swiper-slide"><a href="#"><img src="./images/1swipe-img.png"></a></li>           
+        </ul>            
+        <div class="swiper-pagination"></div>          
+    </div>
+    <script type="text/javascript">
+        var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination', 
+                slidesPerView: 'auto', 
+                paginationClickable: true,
+                grabCursor: true,
+                spaceBetween: 0,
+                paginationType : 'fraction',
+                paginationFractionRender: function (swiper, currentClassName, totalClassName) {
+                    return '<span class="'+currentClassName+'"></span>/<span class="'+totalClassName+'"></span>';
+                }        
+            });
+    </script>
+    <div class="basic-info">
+    	<div class="pro-title">
+            <a href="#"><span class="pro-txt">【套餐】法国进口葡萄酒 拉菲传奇梅多克法定产区红葡萄酒 整箱装 750ml*6瓶</span></a>
+        </div>
+    	<div class="pro-price-wrap">
+            <p class="new-price">￥<span class="big-price">990.00</span></p>
+            <span class="pro-activity">套餐价</span>
+            <span class="pro-activity">2倍批购</span>
+        </div>
+    	<div class="pro-original-price">商品原价：￥1299.00</div>
+    </div>
+</div>
+
+<div class="pro-promotion" id="prodPromotion">
+    <span class="p-msg">促销活动</span>    
+    <div class="p-txt"><i class="icon-cx"></i>首单满1000元95折，满2000元93折</div>
+    <span class="p-more"></span> 
+</div>
+<script type="text/javascript">
+    $("#prodPromotion").click(function(){
+        layer.open({
+            type: 1,
+            title: false,
+            area: ['100%', '206px'],
+            offset: 'lb',
+            shift: 2,
+            closeBtn: 2, //关闭按钮 
+            scrollbar: false,
+            shadeClose: true, 
+            fix: false,          
+            content: '<div class="dialog-promotion">'+
+                        '<div class="dialg-tit">促销活动</div>'+
+                        '<div class="dialg-cont">'+
+                            '<ul>'+
+                                '<li><em class="c-activity">返券</em><span>消费金额达1000以上，每满100元返5元代金券</span></li>'+
+                                '<li><em class="c-activity">满减</em><span>消费金额达到1000元立减50</span></li>'+
+                                '<li><em class="c-activity">满赠</em><span>满300赠送可口可乐一箱</span></li>'+
+                                '<li><em class="c-activity">首单</em><span>首单满1000立享85折</span></li>'+
+                                '<li><em class="c-activity">返券</em><span>消费金额达1000以上，每满100元返5元代金券</span></li>'+
+                                '<li><em class="c-activity">满减</em><span>消费金额达到1000元立减50</span></li>'+
+                                '<li><em class="c-activity">满赠</em><span>满300赠送可口可乐一箱</span></li>'+
+                                '<li><em class="c-activity">首单</em><span>首单满1000立享85折</span></li>'+
+                            '</ul>'+
+                        '</div>'+
+                     '</div>' 
+        });
+    })
+</script>
+<div class="pro-promotion" id="Giftlist">
+    <a href="#"><span class="Gift-msg">赠品清单</span><i class="addr-point"></i></a>
+</div>
+
+<div class="list-item">
+    <div class="m-title">套餐明细<span>（已优惠:60.00）</span></div>
+    <ul class="m-pro">
+        <li>
+            <div class="main-content">
+                <div class="pro-border-img"><img src="images/goodsImg_1.png"></div>
+                <div class="pro-info-box">
+                    <div class="pro-name">
+                        <a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+                    </div>      
+                    <div class="pro-specs">规格：<span>161g*15/袋</span></div>
+                    <p class="pro-price">
+                        <span class="pay-price">￥<span class="big-price">24.00</span></span>
+                        <span class="pay-num">x 1</span>
+                    </p>
+                </div>
+            </div>
+            <b class="line"></b>
+        </li>
+        <li>
+            <div class="main-content">
+                <div class="pro-border-img"><img src="images/goodsImg_1.png"></div>
+                <div class="pro-info-box">
+                    <div class="pro-name">
+                        <a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+                    </div>      
+                    <div class="pro-specs">规格：<span>161g*15/袋</span></div>
+                    <p class="pro-price">
+                        <span class="pay-price">￥<span class="big-price">24.00</span></span>
+                        <span class="pay-num">x 1</span>
+                    </p>
+                </div>
+            </div>
+            <b class="line"></b>
+        </li>               
+        <li>
+            <div class="main-content">
+                <div class="pro-border-img"><img src="images/goodsImg_1.png"></div>
+                <div class="pro-info-box">
+                    <div class="pro-name">
+                        <a href="#"><span class="pro-name-txt">好丽友呀!土豆蜂蜜黄油70g*1好丽友呀!土豆蜂蜜黄油70g*1</span></a>
+                    </div>      
+                    <div class="pro-specs">规格：<span>161g*15/袋</span></div>
+                    <p class="pro-price">
+                        <span class="pay-price">￥<span class="big-price">24.00</span></span>
+                        <span class="pay-num">x 1</span>
+                    </p>
+                </div>
+            </div>
+            <b class="line"></b>
+        </li>        
+    </ul>   
+</div>
+
+
+<div class="pro-details-img" style="margin-top:10px;">
+    <div class="m-title">套餐详情</div>
+    <span>
+        <img src="./images/details-img1.png"><br>
+        <img src="./images/details-img2.png">
+    </span>
+</div>
+
+<!-- 底部工具栏 -->
+<div class="toolbar">    
+    <div class="toolbar-submit">
+        <ul class="ui-bar">
+            <li style="width:18%; margin-left:3%;">
+                <div class="mycart"><a href="#"><span><i class="num">25</i></span>购物车</a></div>
+            </li>
+            <li style="width:42%; margin-left:8%;" >
+                <div class="buy-info">
+                    <a href="javascript:void(0);" class="minus-btn"></a>
+                    <span><input type="number" value="2" /></span>
+                    <a href="javascript:void(0);" class="plus-btn"></a>
+                </div> 
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <a href="javascript:void(0);" class="btn-right-info">加入购物车</a>
+    </div>
+</div>
+</body>
+</html>

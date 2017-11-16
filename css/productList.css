@@ -1,0 +1,73 @@
+@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+/* 通用样式 */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+.wrapper{
+	padding-left: 13px;
+	margin-bottom: 15px;
+	background-color:#FFF;
+}
+.wrapper .pro-cont{
+	padding-top: 15px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+/* 套餐 */
+.setmeal-info{	
+    display: -webkit-box;
+    display: box;
+    height: 100%;
+    padding: 13px 0;
+    font-size: 0px;
+    position: relative;
+}
+.setmeal-info .pro-border-img{
+	width: 54px;
+    height: 54px;
+    margin: 0 10px;    
+}
+.setmeal-info .pro-border-img img{
+	display: block;
+	position: relative;
+    z-index: 2;
+}
+.setmeal-info .pro-name-txt{
+	height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.setmeal-info li.line{
+	position: absolute;
+    width: 200%;
+    height: 1px;
+    background-color: #e1e1e1;
+    left: 95px;
+    top: 0;
+}
+.setmeal-packUp{
+    font-size: 14px;
+    color: #F6B002;
+}
+.setmeal-packUp img {
+    width: 12px;
+    height: 8px;
+    margin-left: 3px;
+    position: relative;
+}
+.setmeal-info i.pro-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #e1e1e1;
+    left: 28px;
+    top: -28px;
+}

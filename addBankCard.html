@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%;background-color: #fff">
+<head>
+	<meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+	<title>开通信用账户</title>
+	<link rel="stylesheet" type="text/css" href="css/addBankCard.css">
+	<script type="text/javascript" src="./js/lib/jquery-1.9.1.min.js"></script>	
+	<!-- 解决IE9 以下不支持background-size -->
+	<!--[if lt IE 9]>
+		<style>
+			.addCardBox .phone{
+				background: none;
+				filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/addCard/bank_ic_camera.png',sizingMethod='scale');
+			}
+		</style>
+	<![endif]-->
+	
+</head>
+<body style="height:100%;background-color: #fff">
+	<div class="addCardTop">
+		<p>失败原因失败原因失败原因，您可重新填写信息认证</p>
+	</div>
+	
+	<div class="cardLine"></div>
+
+	<div class="addCardBox">
+		<p class="cardName">
+			<span class="title">持卡人</span>
+			<input type="text" placeholder="本人姓名" class="nameValue" >
+			<img src="images/addCard/ap_input_delete.png" alt="" class="clearAll">
+		</p>
+		<p class="idCard">
+			<span class="title">身份证</span>
+			<input type="text" placeholder="本人身份证号" class="idCardValue ">
+			<img src="images/addCard/ap_input_delete.png" alt="" class="clearAll">
+			<a href="javascript:void(0);" class="phone"><input type="file"></a>
+		</p>
+		<div class="cardLine"  style="height: 5px;"></div>
+		<p class="warn">请绑定本人的银行卡，此卡将用于信用账户还款</p>
+		<p class="bankName">
+			<span class="title">开户银行</span>
+			<input type="text" placeholder="请选择" class="bankNameValue ">
+			<img src="images/addCard/ap_input_delete.png" alt="" class="clearAll">
+			<a href="javascript:void(0);"><img src="images/addCard/arrow.png" alt=""></a>
+		</p>
+		<p class="cardNumber">
+			<span class="title">银行卡号</span>
+			<input type="text" placeholder="本人银行卡号码" class="cardNumberValue " >
+			<img src="images/addCard/ap_input_delete.png" alt="" class="clearAll">
+			<a href="javascript:void(0);" class="phone"><input type="file"></a>
+		</p>
+		<p class="phoneNumber">
+			<span class="title">手机号码</span>
+			<input type="text" placeholder="银行预留号码" class="phoneValue ">
+			<img src="images/addCard/ap_input_delete.png" alt="" class="clearAll">
+		</p>
+	</div>
+	<div class="cardLine"></div>
+
+	<div class="cardBtn">
+		<a href="javascript:void(0);">下一步</a>
+	</div>
+
+	<script type="text/javascript">
+		// keyup
+		function up(obj){
+			if($(obj).val()!=''){
+				$(obj).next().show();
+			}else{
+				$(obj).next().hide();
+			}
+		}
+		// blur
+		function blu(obj){
+			setTimeout(function(){
+				$(obj).next().hide();
+			},100);
+		}
+		// click
+		function cli(obj){
+			$(obj).hide();
+			$(obj).prev().val('').focus();
+		}
+		//focus
+		function fou(obj){
+			if($(obj).val()!=''){
+				$(obj).next().show();
+			}
+		}
+		// 按钮变红
+		function changeRed(){
+			var val1 = $('.nameValue').val();
+			var val2 = $('.idCardValue').val();
+			var val3 = $('.bankNameValue').val();
+			var val4 = $('.cardNumberValue').val();
+			var val5 = $('.phoneValue').val();
+			if( val1!='' && val2!='' && val3!='' && val4!='' && val5!=''){
+				$('.cardBtn').addClass('cardBtn_Red');
+			}else{
+				$('.cardBtn').removeClass('cardBtn_Red');
+			}
+		}
+
+		$(function(){
+
+			$('.addCardBox p').on('blur','input',function(){
+				blu(this);
+			});
+			$('.addCardBox p').on('focus','input',function(){
+				fou(this);
+			});
+			$('.addCardBox p').on('click','.clearAll',function(){
+				cli(this);
+				changeRed();
+			});
+			$('.addCardBox p').on('keyup','input',function(){
+				up(this);
+				changeRed();
+			});
+
+			// 银行卡号每隔4位显示
+			$('.cardNumberValue').on('keyup',function(){
+				$(this).attr('maxlength','25')
+				this.value =this.value.replace(/\s/g,'').replace(/(\d{4})(?=\d)/g, "$1 ");
+				// this.value =this.value.replace(/(\d{4})(?=\d)/g, "$1 ");
+			})
+			
+		})
+		
+
+		
+	</script>
+</body>
+</html>

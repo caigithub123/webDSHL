@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：分类</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/category.css">    
+
+    <script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapper" id="category">
+    <header class="fixed_header">
+		<a href="javascript:history.go(-1);" class="back_btn"><img src="images/icon_back.png"></a>
+		<div class="f_box"><input type="text" placeholder="搜商品" id="search_text"></div>
+	</header>
+	<div class="category-main">
+		<div class="cate-l">
+			<div class="cate-tab" id="listsTab">			
+				<ul id="cate-l-ui">
+					<li class="check">
+						<a href="javascript:void(0);" class="on">1休闲</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">2粮油</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">3饮食冲调</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">4方便饮食</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">5食品</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">6调料</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">7冲调</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">8饮食</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">9方便</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">10食品</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">11粮油</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">12冲调</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">13饮食</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">14饮食</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li>
+						<a href="javascript:void(0);">15饮食</a>
+						<span class="subnav">
+							<span><i></i>酱制品</span>
+							<span><i></i>调味品</span>
+							<span><i></i>干菜配料</span>
+							<span><i></i>罐头</span>
+						</span>
+					</li>
+					<li style="height:50px;"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="cate-r">
+			<div class="menu">
+				<div class="m-title" id="cateTab">
+					<a id="mt-sort"><span>排序</span></a>
+					<a id="mt-brand"><span>品牌</span></a>
+					<a id="mt-filter"><span>筛选&nbsp;</span></a>
+				</div>
+				<div class="m-content">
+					<ul class="mc-layout" id="sort">
+						<li class="mc-sort">
+							<a href="javascript:void(0);"><label>综合排序</label></a>
+							<a href="javascript:void(0);"><label>销量排序</label></a>
+							<a href="javascript:void(0);"><label>新品排序</label></a>
+							<a href="javascript:void(0);"><label>价格由低到高</label></a>
+							<a href="javascript:void(0);"><label>价格由高到低</label></a>
+						</li>
+					</ul>
+					<ul class="mc-layout" id="brand">
+						<li class="mc-brand">
+							<a href="javascript:void(0);">百事可乐</a>
+							<a href="javascript:void(0);">加多宝</a>
+							<a href="javascript:void(0);">三只松鼠</a>
+							<a href="javascript:void(0);">坚果炒货</a>
+							<a href="javascript:void(0);">饼干</a>
+							<a href="javascript:void(0);">可口可乐</a>
+							<a href="javascript:void(0);">三只松鼠</a>
+							<a href="javascript:void(0);">电池</a>
+							<a href="javascript:void(0);">王老吉</a>
+							<a href="javascript:void(0);">百事可乐</a>
+							<a href="javascript:void(0);">综合排序</a>
+							<a href="javascript:void(0);">销量排序</a>
+							<a href="javascript:void(0);">新品排序</a>
+
+						</li>
+						<li class="mc-btn">
+							<span class="resetBtn"  onclick='$(this).parent().prev().find("a").removeClass("on")'>重置</span>
+							<span class="sureBtn" onclick='confirmBtn()'>确定</span>
+						</li>
+					</ul>
+					<ul class="mc-layout" id="filter">
+						<li class="mc-filter">
+							<div class="fil-main">
+								<h3 class="fil-tit">商品</h3>
+								<div class="fil-txt"><a href="javascript:void(0);">只看有货</a></div>
+							</div>
+							<div class="fil-main">
+								<h3 class="fil-tit">促销</h3>
+								<div class="fil-txt">
+									<a href="javascript:void(0);">折扣</a>
+									<a href="javascript:void(0);">满减</a>
+									<a href="javascript:void(0);">满赠</a>
+								</div>
+							</div>
+						</li>
+						<li class="mc-btn">
+							<span class="resetBtn"  onclick='$(this).parent().prev().find("a").removeClass("on")'>重置</span>
+							<span class="sureBtn" onclick='confirmBtn()'>确定</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="cate-r-main">
+				<div class="mds-list-item" id="search_list">
+					<ul class="pro-item">
+						<li>
+							<div class="pro-img">
+								<a href="#"><span class="corner-tag">满减</span><img src="images/goodsImg_1.png"></a>
+							</div>
+							<div class="pro-info-box">
+								<div class="pro-name"><a href="#"><span class="sp-txt">好丽友呀!土豆蜂蜜黄油70g*1</span></a></div>
+								<div class="pro-specs"><span>1*1</span><span class="cartonSize">（注：6盒/箱）</span></div>
+								<div class="pro-buy"></div>
+								<div class="pro-cont">
+									<div class="pro-price">
+										<em>￥<span class="big-price">24.00</span></em>
+										<span>￥12</span>
+									</div>
+									<div class="pro-main">
+										<input type="tel" oninput="if(value.length>3)value=value.slice(0,3)" value="20" class="txt-num">
+										<a href="javascript:void(0);" class="add-cart"></a>
+									</div>
+								</div>
+								<b class="line"></b>
+							</div>
+						</li>
+						<li>
+							<div class="pro-img">
+								<a href="#"><span class="corner-tag">满减</span><img src="images/goodsImg_1.png"></a>
+							</div>
+							<div class="pro-info-box">
+								<div class="pro-name"><a href="#"><span class="sp-txt">好丽友呀!土豆蜂蜜黄油70g*1</span></a></div>
+								<div class="pro-specs"><span>1*1</span><span class="cartonSize">（注：6盒/箱）</span></div>
+								<div class="pro-buy"></div>
+								<div class="pro-cont">
+									<div class="pro-price">
+										<em>￥<span class="big-price">24.00</span></em>
+										<span>￥12</span>
+									</div>
+									<div class="pro-main">
+										<input type="tel" oninput="if(value.length>3)value=value.slice(0,3)" value="20" class="txt-num">
+										<a href="javascript:void(0);" class="add-cart"></a>
+									</div>
+								</div>
+								<b class="line"></b>
+							</div>
+						</li>
+						<li>
+							<div class="pro-img">
+								<a href="#"><span class="corner-tag">93折</span><img src="images/goodsImg_3.png"></a>
+							</div>								
+							<div class="pro-info-box">
+								<div class="pro-name"><a href="#"><span class="sp-txt">中国台湾进口张君雅小妹妹甜甜圈草莓味40克</span></a></div>
+								<div class="pro-specs">美味甜甜圈</div>
+								<div class="pro-specs"><span>1*1</span><span class="cartonSize">（注：3袋/箱）</span></div>
+								<div class="pro-buy"></div>
+								<div class="pro-cont">
+									<div class="pro-price">
+										<em>￥<span class="big-price">24.00</span></em>
+										<span>￥12</span>
+									</div>
+									<div class="pro-main">						
+										<input type="tel" oninput="if(value.length>3)value=value.slice(0,3)" value="20" class="txt-num">
+										<a href="javascript:void(0);" class="add-cart"></a>
+									</div>
+								</div>
+								<b class="line"></b>
+							</div>				
+						</li>
+						<li>
+							<div class="pro-img">
+								<a href="#"><span class="corner-tag">68折</span><img src="images/goodsImg_2.png"></a>
+							</div>								
+							<div class="pro-info-box">
+								<div class="pro-name"><a href="#"><span class="sp-txt">中国台湾进口张君雅小妹妹甜甜圈草莓味40克</span></a></div>
+								<div class="pro-specs"><span>1*1</span><span class="cartonSize">（注：3袋/箱）</span></div>
+								<div class="pro-buy"><span>2倍批购</span><span>2倍批购</span><span>2倍批购</span></div>
+								<div class="pro-cont">
+									<div class="pro-price">
+										<em>￥<span class="big-price">24.00</span></em>
+										<span>￥12</span>
+									</div>
+									<div class="pro-main">						
+										<input type="tel" oninput="if(value.length>3)value=value.slice(0,3)" value="20" class="txt-num">
+										<a href="javascript:void(0);" class="add-cart"></a>
+									</div>
+								</div>
+								<b class="line"></b>
+							</div>				
+						</li>
+						<li>
+							<div class="pro-img">
+								<a href="#"><img src="images/goodsImg_3.png"><div class="i_sellout"></div></a>
+							</div>								
+							<div class="pro-info-box">
+								<div class="pro-name"><a href="#"><span class="sp-txt">【套餐】中国台湾进口张君雅小妹妹甜甜圈草莓味40克</span></a></div>
+								<div class="pro-specs"><span>1*1</span><span class="cartonSize">（注：3袋/箱）</span></div>
+								<div class="pro-buy"><span>2倍批购</span><span>2倍批购</span><span>2倍批购</span></div>
+								<div class="pro-cont">
+									<div class="pro-price">
+										<em>￥<span class="big-price">24.00</span></em>
+										<span>￥12</span>
+									</div>
+									<div class="pro-txt"><span>补货中</span></div>
+								</div>
+								<b class="line"></b>
+							</div>				
+						</li>
+					</ul>
+					<div class="no-more">别拉了，已经到底了~</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	/*$("#cate-r-main").scroll(function() {
+		var _this = this;
+		if( $(_this).scrollTop() + $(_this).height() >= $(_this).children().height() ){
+			console.log("11111");
+		}
+	})*/
+	$("#cate-l-ui").on("click","a",function(){
+		var that = this;
+		var subnav = $(that).parent().find("span.subnav");
+		if( $(that).parent().hasClass("check") ){
+			$(that).parent().removeClass("check");
+		}else{
+			$(that).addClass("on").parent().siblings().find("a").removeClass("on").removeClass('cateFix');
+			$(that).parent().addClass("check").siblings().removeClass("check");
+			if( subnav.length != 0 ){
+				var span = subnav.children();
+				$(span).siblings().removeClass("cur");
+			}
+		}
+	});
+
+	$(".subnav").on("click","span",function(){
+		$(this).addClass("cur").siblings().removeClass("cur");
+	});
+
+	$('#listsTab').scroll(function() {
+		var thisOT = parseFloat($(this).offset().top, 10);
+
+		var _height = $(this).children().height();
+
+		var check = $(this).find("li.check"),
+			subnav = $(check).find("span.subnav");
+
+		if( subnav.length != 0 ){
+			var	checkOT = parseFloat( check.offset().top, 10),
+				checkNextOT = parseFloat( check.next().offset().top, 10);
+			
+			if( checkOT <= thisOT ){
+				$(check).find('a').addClass('cateFix');
+			}else {
+				$(check).find('a').removeClass('cateFix');
+			}		
+			if( checkNextOT < 98 ){
+				$(check).find('a').removeClass('cateFix');
+			}
+
+			if( $(this).scrollTop() + $(this).height() >= _height ){
+				console.log( "scroll:"+$(this).scrollTop(), "height:"+ _height, "checkT:"+ checkOT );
+			}
+		}
+	});
+	
+	function confirmBtn(){
+		setTimeout(function(){
+			$(".menu_nav").css({"height":""});
+			$("html,body").css({"overflow":"","height":""});
+			$(".menu").find(".mask-layer").remove();
+			$(".m-title").find("a").removeClass("on");
+			$(".menu").find(".mc-layout").hide();
+		},500)
+	};
+
+	$("#cateTab").on("click","a",function(){
+		var idx = $(this).index();
+		if( $(this).hasClass("on") ){
+			$(this).removeClass("on");
+			$("html,body").css({"overflow":"","height":""});
+			$(".menu").css({"height":""}).find(".mask-layer").remove();
+			$(this).parent().next().find("ul").hide();
+		}else{
+			$(this).addClass("on").siblings().removeClass("on");
+			if( $(".menu").find(".mask-layer").length == 0 ){
+				$(".menu").css({"height":"100%"}).prepend('<div class="mask-layer" onclick="confirmBtn()"></div>');
+				$(".menu").find(".mask-layer").width( $(".menu").width() );
+			}
+			$(this).parent().next().find("ul").eq(idx).show().siblings().hide();
+		}
+	});
+
+	$("#sort").on("click","a",function(){
+		var $that = $(this);
+		(  $that.hasClass("on") ) ? (  $that.removeClass("on") ) : (  $that.addClass("on").siblings().removeClass("on"),confirmBtn($that) );
+	});
+	$("#brand").on("click","a",function(){
+		var $that = $(this);
+		(  $that.hasClass("on") ) ? (  $that.removeClass("on") ) : (  $that.addClass("on") );
+	});
+	$("#filter").on("click","a",function(){
+		var $that = $(this);
+		(  $that.hasClass("on") ) ? (  $that.removeClass("on") ) : (  $that.addClass("on") );
+	});
+	
+</script>
+</html>

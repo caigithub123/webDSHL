@@ -1,0 +1,457 @@
+@charset "utf-8";
+@import url("common/reset.css"); /* The default styles */
+/* 通用样式 */
+html,body{ 
+	max-width: 750px; 
+	min-width: 320px;  
+	margin: 0 auto; 
+}
+/* 订单详情 */
+.order-info{
+	height: auto;
+	padding: 16px 13px;
+	background-color: #fff;
+	margin: 0;
+	position: relative;
+}
+.order-info p{
+	width: 78%;
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	color: #555;
+	overflow: hidden;
+}
+.order-info .order-status{	
+	height: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #EF5555;
+	position: absolute;
+	right: 13px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.order-process{
+	height: auto;
+	background-color: #fff;
+	margin-top: 8px;
+}
+.orderDetail{
+	border-bottom:1px solid #d7d7d7; 
+	line-height:35px;
+	position:relative; 
+	background-color:#fff; 
+	padding:15px 13px;
+	overflow:hidden;
+}
+.process_radius{ 	
+    width: 20px;
+    height: 100%;
+    position: absolute;
+	left: 13px;
+	top: 15px;
+    margin: 0;
+}
+.process_radius span.big_radius{ 
+	display:inline-block;
+	width: 18px; 
+	height: 18px; 
+	border-radius: 9px; 
+	background-color:#ffc1c1;  
+	text-align:center; 
+	position:relative; 
+	z-index: 1; 
+}
+.process_radius span.small_radius{ 
+	display: block;
+	width: 10px; 
+	height: 10px; 
+	border-radius: 5px; 
+	background-color:#fe6060; 
+	margin: 4px auto; 
+}
+.process_radius span.d-line{ 
+	width:1px; 
+	border-left:1px solid #d7d7d7; 
+	display:inline-block; 
+	height:200%; 
+	position:absolute; 
+	top:-7px; 
+	left: 9px; 
+	z-index:0;
+ 	margin-top:20px; 
+}
+.process_detail{ 
+	margin-left:28px; 
+	line-height:20px;
+	padding-right: 30px;
+	position: relative;
+}
+.process_detail p{ 
+	color:#de1919;
+	font-size:14px;  
+	display:inline-block;
+}
+.process_detail span{ 
+	display: block;
+	color: #000; 
+	font-size: 12px;
+	color: #999999;	
+}
+.process_link{
+	width: 43px;
+    height: 100%;
+    position: absolute;
+	right: 0;
+	top: 0;
+    margin: 0;
+}
+.process_link .addr-point{
+	right: 50%;
+}
+
+
+/* 商品清单 */
+.order-product{
+	margin-top: 8px;
+	padding-bottom: 5px;
+	background-color: #fff;
+}
+.order-product h4.pro-tit{
+	height: 39px;
+	font-size: 14px;
+	line-height: 39px;
+	padding: 0 13px;
+	border-bottom: 1px dashed #D4D4D4;
+}
+.order-product h4.pro-tit .kefuPhone{
+	float: right;
+	color: #EF5555;
+	padding-left: 24px;
+	background-image: url(../images/icon-kefuPhone.png);
+	background-size: 18px 16px;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.order-product .pro-cont {
+    padding: 0 13px;
+    background-color: #FAFAFA;
+    margin-top: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.order-product .pro-cont .main-content{
+	padding-top: 13px;
+}
+.order-product .pro-cont .pro-unitPrice{
+	width: 60px;
+	height: auto;
+	text-align: right;
+	overflow: hidden;
+}
+.order-product .p-price{
+	font-size: 14px;
+	color: #555;
+	padding-bottom: 6px;
+}
+.order-product .p-number{
+	font-size: 15px;
+	color: #999;
+	padding-right: 3px;	
+}
+/* 套餐 */
+.setmeal-info{	
+    display: -webkit-box;
+    display: box;
+    height: 100%;
+    padding: 13px 0;
+    font-size: 0px;
+    position: relative;
+}
+.setmeal-info .pro-border-img{
+	width: 54px;
+    height: 54px;
+    margin: 0 10px;    
+}
+.setmeal-info .pro-border-img img{
+	display: block;
+	position: relative;
+    z-index: 2;
+}
+.setmeal-info li.line{
+	position: absolute;
+    width: 200%;
+    height: 1px;
+    background-color: #e1e1e1;
+    left: 95px;
+    top: 0;
+}
+.setmeal-packUp{
+    font-size: 14px;
+    color: #F6B002;
+}
+.setmeal-packUp img {
+    width: 12px;
+    height: 8px;
+    margin-left: 3px;
+    position: relative;
+}
+.setmeal-info i.pro-line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #e1e1e1;
+    left: 28px;
+    top: -28px;
+}
+
+
+
+/* 收货地址 */
+.order-address{
+    width: 100%;
+    position: relative;
+    top: 0;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 11px 13px 12px;
+    margin-top: 8px;
+}
+
+
+.order-item{
+	height: auto;
+	margin-top: 8px;	 
+	background-color:#fff;
+}
+.order-item ul{
+	line-height:30px; 
+	font-size:14px; 
+	color:#333;
+	padding: 15px 13px 8px;
+}
+.order-item ul li{ 
+	font-size: 14px;
+	color: #555;
+	margin: 0;
+}
+.order-item ul li span{ 
+	float: right;
+	color: #333;
+	font-size: 14px;
+}
+.order-item ul li em{	
+	color: #EF5555;
+	font-size: 14px;
+}
+.order-item .order-outlay{
+	line-height:30px; 
+	font-size:14px; 
+	color:#333;
+	margin-top: 8px; 
+	padding: 15px 13px;
+	background-color:#fff;
+}
+.order-item .order-outlay p.outlay-price{
+	float: left; 
+	width: 132px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.order-item .order-outlay p.outlay-price em{
+	height: 20px;  
+	font-size: 15px; 
+    color: #EF5555;
+}
+.order-item .totalAmount{
+	height: 45px;
+	line-height: 45px;
+	color: #333333;
+	font-size: 14px;
+	padding: 0 13px;
+	margin: 0;
+	border-top: 1px solid #D1D1D1;
+}
+.order-item .totalAmount span{
+	color: #999999;
+	font-size: 12px;
+}
+.order-item .totalAmount em{
+	float: right;
+	color: #EF5555;
+	font-size: 15px;
+}
+.order-btn{
+	height: auto;
+	margin-top: 8px;	 
+	background-color:#fff;
+	/*box-shadow: 0px 0px 6px rgba(0,0,0,.3);*/
+}
+.order-btn .outlayBtn{	
+	height: 58px;
+	line-height: 58px;
+	padding: 0 13px;
+}
+
+
+
+/* 弹层 -- 客服电话 */
+body .layui-layer{
+	border: 1px solid #A9A9A9;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 1px 1px 50px rgba(0,0,0,0);
+}	
+body .layui-layer-content p{
+	width: 100%;
+	height: 58px;
+	line-height: 58px;
+	font-size: 15px;
+	text-align: center;		
+}
+body .layui-layer-page .dsBtn{
+	height: 44px;
+	padding: 0; margin: 0;		
+    border-top: 1px solid #D1D1D1;
+}			
+body .dsBtn a {
+    float: left;
+    width: 50%;
+	height: 44px;	
+	line-height: 44px;
+	font-size: 14px;
+	text-align: center;	
+	color: #333; 
+    background-color: #fff;        
+}
+body .dsBtn .layui-layer-btn0 {    
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box; 
+    border-left: 1px solid #D1D1D1;
+}
+
+/* 随单赠送优惠券 */
+.order-coupon{
+	padding: 0 13px 5px;
+}
+.order-coupon .coupon-tit{
+	height: 26px;
+	line-height: 26px;
+	font-size: 13px;
+	color: #555;
+}
+.cou-list{
+	width:100%;
+	margin-bottom: 8px;
+	position: relative;
+}
+.cou-list .list-left{
+	width: 100px;
+	height: 60px;
+	padding: 6px 3px 6px 6px;
+	background:url(../images/coupons1.png) no-repeat;
+	background-size: 100% 100%;
+	background-color: #f5f5f5;
+	position: absolute;
+	top:0;
+	left: 0;	
+}
+.list-left h3{
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.list-left h3 span{
+	display: inline-block;
+	font-size: 23px;
+}
+.list-left h3 span i {
+	font-size: 14px;
+}
+.list-left p{
+	width:100%;
+	height: 16px;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	overflow: hidden;
+}
+.cou-list .list-right{
+	border:1px solid #d7d7d7;
+	border-left:none;
+	border-radius: 0 3px 3px 0;
+	height: 50px;
+	padding: 10px 32px 10px 115px;
+	background: url(../images/coupons2.png) no-repeat right bottom;
+	background-size: 65px 47px;
+	background-color: #fff;
+}
+.cou-list .list-right p{
+	height: 18px;
+	padding-top: 6px;
+	font-size: 12px;
+	color: #A1A1A2;
+	overflow: hidden;
+}
+.cou-list .list-right p.sure{
+	color: #EF5555;
+	font-size: 13px;
+}
+.cou-list .list-right .number{
+	display: inline-block;
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #A1A1A2;
+	position: absolute;
+	right: 4px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+
+/* New style, Date: 2017-10-12 10:00 */
+.main-content .horizontal-tag {
+	left: 3px;
+	top: 3px;
+}
+
+.afterSale {
+	display: block;
+	height: 20px;
+    line-height: 20px;
+    padding: 10px 13px;
+    position: relative;
+    background-color: #FFF;
+    margin: 0;
+    overflow: hidden;
+}
+.afterSale .sale-l {
+	float: left;
+	font-size: 14px;
+	color: #333333;
+}
+.afterSale .sale-r {
+	float: right;
+	padding-right: 22px;
+	font-size: 12px;
+	color: #999999;
+}
+.outlayBtn a.btn_grey,
+.outlayBtn a.btn_disabled {
+	margin-left: 6px;
+}
+.outlayBtn a.btn_disabled {
+    color: #999999;
+    border: 1px solid #E1E1E1;
+}

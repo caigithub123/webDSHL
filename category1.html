@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"> 
+    <title>店商：商品分类</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/category1.css">    
+
+    <script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+
+    <script type="text/javascript">
+        // 隐藏菜单
+		function hideAll(){
+			$("#nav_Content .shade").hide();
+			$('html,body').removeClass("over");
+			$("#nav_Content .content").hide();
+			$('#top_Nav li.init').find('img').attr('src','images/icon_big_down.png');
+			$('#top_Nav li').removeClass('active');
+			$('.filter').find('img').attr('src','images/icon_filtrate.png');
+		}   
+
+		// 点击菜单清除按钮
+		function clearall(obj){
+			if($(obj).parents('.content').find('ul a').hasClass('change')){
+				$(obj).parents('.content').find('ul a').removeClass('change');
+			}
+		}   
+    </script>
+</head>
+<body >
+<div class="wrapper">
+	<!-- 头部 -->
+    <header class="fixed_header">
+		<a href="javascript:history.go(-1);" class="back_btn"><img src="images/icon_back.png"></a>
+		<div class="f_box"><input type="text" placeholder="搜商品" id="search_text"></div>
+	</header>
+	<!-- 头部 -->	
+
+	<div class="category-main">
+		<div class="cate-left">
+			<ul id="cate-scroll">
+				<li class="on"><a href="javascript:void(0)">休闲食品</a></li>
+				<li>
+					<a href="javascript:void(0)">粮油调料</a>
+					<ul class="sun-tab">
+						<li><i></i><a href="javascript:void(0)">酱制品</a></li>
+						<li><i></i><a href="javascript:void(0)">调味品</a></li>
+						<li><i></i><a href="javascript:void(0)">干菜配料</a></li>
+						<li><i></i><a href="javascript:void(0)">罐头</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)">粮油调料</a>
+					<ul class="sun-tab">
+						<li><i></i><a href="javascript:void(0)">酱制品</a></li>
+						<li><i></i><a href="javascript:void(0)">调味品</a></li>
+						<li><i></i><a href="javascript:void(0)">食用油</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0)">方便食品</a></li>
+				<li><a href="javascript:void(0)">方便食品</a></li>
+				<li><a href="javascript:void(0)">饮料冲调1</a></li>
+				<li><a href="javascript:void(0)">洗涤类1</a></li>
+				<li><a href="javascript:void(0)">饮料冲调2</a></li>
+				<li><a href="javascript:void(0)">洗涤类2</a></li>
+				<li><a href="javascript:void(0)">饮料冲调3</a></li>
+				<li><a href="javascript:void(0)">洗涤类3</a></li>
+				<li><a href="javascript:void(0)">饮料冲调4</a></li>
+				 <li><a href="javascript:void(0)">洗涤类4</a></li>
+				<li><a href="javascript:void(0)">饮料冲调</a></li>
+				<li><a href="javascript:void(0)">洗涤类</a></li>
+				<li><a href="javascript:void(0)">饮料冲调</a></li>
+				<li><a href="javascript:void(0)">洗涤类</a></li>
+				<li><a href="javascript:void(0)">饮料冲调</a></li> 
+				<li>
+					<a href="javascript:void(0)">粮油调料1</a>
+					<ul class="sun-tab">
+						<li><i></i><a href="javascript:void(0)">酱制品</a></li>
+						<li><i></i><a href="javascript:void(0)">调味品</a></li>
+						<li><i></i><a href="javascript:void(0)">食用油</a></li>
+						<li><i></i><a href="javascript:void(0)">罐头</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="cate-right">
+			<!-- 商品分类 -->
+			<div class="goods_Sort">
+				<ul class="top_Nav" id="top_Nav">
+					<li class="paixu init">排序<img src="images/icon_big_down.png" alt=""></li>
+					<li class="fenlei init">品牌<img src="images/icon_big_down.png" alt=""></li>
+					<li class="filter">筛选<img src="images/icon_filtrate.png" alt=""></li>
+					
+				</ul>
+				<div style="clear:both"></div>
+				<div id="nav_Content">
+					<div class="content paixu">
+						<ul class="p_Nav">
+							<li><a href="#">综合排序</a></li>
+							<li><a href="#">销量排序</a></li>
+							<li><a href="#">新品排序</a></li>
+							<li><a href="#">价格由低到高</a></li>
+							<li><a href="#">价格由高到低</a></li>
+						</ul>
+					</div>
+					<div class="content contenta">
+						<ul class="next_Nav">
+							<li><a href="#">康师傅</a></li>
+							<li><a href="#">农夫山泉</a></li>
+							<li><a href="#">哇哈哈</a></li>
+							<li><a href="#">康师傅</a></li>
+							<li><a href="#">农夫山泉</a></li>
+							<li><a href="#">哇哈哈</a></li>
+							<li><a href="#">康师傅</a></li>
+							<li><a href="#">农夫山泉</a></li>
+							<li><a href="#">哇哈哈</a></li>
+							<li><a href="#">康师傅</a></li>
+							<li><a href="#">农夫山泉</a></li>
+							<li><a href="#">哇哈哈</a></li>
+						</ul>
+						<div style="clear:both"></div>
+						<div class="down">
+							<a href="javascript:void(0)" class="clr" onclick="clearall(this)">重置</a>
+							<a href="javascript:void(0)" class="sure">确定</a>
+						</div>
+					</div>
+					<div class="content contentb">
+						<div class="filBox">
+							<div class="fil-goods">
+								<p>商品</p>
+								<ul>
+									<li><a href="javascript:void(0)">只看有货</a></li>
+								</ul>
+							</div>
+							<div class="fil-goods">
+								<p>促销</p>
+								<ul>
+									<li><a href="javascript:void(0)">折扣</a></li>
+									<li><a href="javascript:void(0)">满减</a></li>
+									<li><a href="javascript:void(0)">满赠</a></li>
+									<li><a href="javascript:void(0)">折扣</a></li>
+									<li><a href="javascript:void(0)">满减</a></li>
+									<li><a href="javascript:void(0)">满赠满赠满赠满赠</a></li>
+								</ul>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+						<div class="down">
+							<a href="javascript:void(0)" class="clr" onclick="clearall(this)">重置</a>
+							<a href="javascript:void(0)" class="sure">确定</a>
+						</div>
+					</div>
+					
+					<div class="shade"></div>
+				</div>
+			</div>
+			<!-- 商品列表 -->
+			<div class="goods-list">
+				<ul class="goods-listBox">
+					<li class="list-left">
+						<a href="javascript:void(0)"><span>满减</span><img src="images/goodsImg_1.png" alt=""></a>
+					</li>
+					<li class="list-right">
+						<a href="javascript" class="r-txt">好丽友呀!土豆蜂蜜黄油70g*1,中国台湾进口张君雅小妹妹甜甜圈草莓味40克国台湾进口张君雅小妹妹甜甜圈草莓味40克</a>
+						<span class="dis">1*1 (注:6袋/箱)</span>
+						<div class="down">
+							<div class="d-left">
+								<p>￥100.9</p>
+								<span>￥200</span>
+							</div>
+							<div class="d-right">
+								<input type="number" value="1">
+								<a href="#"><img src="images/icon_addcart_red.png" alt=""></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="goods-listBox">
+					<li class="list-left">
+						<a href="javascript:void(0)"><span>满减</span><img src="images/goodsImg_1.png" alt=""></a>
+					</li>
+					<li class="list-right">
+						<a href="javascript" class="r-txt">好丽友呀!土豆蜂蜜黄油70g*1,中国台湾进口张君雅小妹妹甜甜圈草莓味40克国台湾进口张君雅小妹妹甜甜圈草莓味40克</a>
+						<span class="dis">1*1 (注:6袋/箱)</span>
+						<div class="down">
+							<div class="d-left">
+								<p>￥100.9</p>
+								<span>￥200</span>
+							</div>
+							<div class="d-right">
+								<input type="number" value="1" disabled="disabled">
+								<a href="#"><img src="images/icon_addcart_red.png" alt=""></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="goods-listBox">
+					<li class="list-left">
+						<a href="javascript:void(0)"><span>93折</span><img src="images/goodsImg_2.png" alt=""></a>
+					</li>
+					<li class="list-right">
+						<a href="javascript" class="r-txt">好丽友呀!土豆蜂蜜黄油70g*1,中国台湾进口张君雅小妹妹甜甜圈草莓味40克国台湾进口张君雅小妹妹甜甜圈草莓味40克</a>
+						<span class="dis">1*1 (注:6袋/箱)</span>
+						<div class="down">
+							<div class="d-left">
+								<p>￥100.9</p>
+								<span>￥200</span>
+							</div>
+							<div class="d-right">
+								<input type="number" value="1">
+								<a href="#"><img src="images/icon_addcart_red.png" alt=""></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="goods-listBox">
+					<li class="list-left">
+						<a href="javascript:void(0)"><!-- <span>93折</span> --><img src="images/goodsImg_3.png" alt=""></a>
+					</li>
+					<li class="list-right">
+						<a href="javascript" class="r-txt">好丽友呀!土豆蜂蜜黄油70g*1,中国台湾进口张君雅小妹妹甜甜圈草莓味40克国台湾进口张君雅小妹妹甜甜圈草莓味40克</a>
+						<span class="dis">1*1 (注:6袋/箱)</span>
+						<div class="r-con">
+							<span>4件起购</span>
+							<span>2倍批购</span>
+							<span>限每日10件</span>
+						</div>
+						<div class="down">
+							<div class="d-left">
+								<p>￥100.9</p>
+								<span>￥200</span>
+							</div>
+							<div class="d-right-txt">
+								补货中
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="goods-listBox">
+					<li class="list-left">
+						<a href="javascript:void(0)"><!-- <span>93折</span> --><img src="images/goodsImg_3.png" alt=""></a>
+					</li>
+					<li class="list-right">
+						<a href="javascript" class="r-txt">好丽友呀!土豆蜂蜜黄油70g*1,中国台湾进口张君雅小妹妹甜甜圈草莓味40克国台湾进口张君雅小妹妹甜甜圈草莓味40克</a>
+						<span class="dis">1*1 (注:6袋/箱)</span>
+						<div class="r-con">
+							<span>4件起购</span>
+							<span>2倍批购</span>
+							<span>限每日10件</span>
+						</div>
+						<div class="down">
+							<div class="d-left">
+								<p>￥<em>100.9</em></p>
+								<span>￥200</span>
+							</div>
+							<div class="d-right-txt">
+								售罄
+							</div>
+						</div>
+					</li>
+				</ul> 
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+	$(function(){
+		$(".cate-left").height( $(window).height()*1-49 );
+		
+		var a = $('.top_Nav').offset().top;
+		var b = $('.top_Nav').scrollTop();
+		
+		$('.cate-left').scroll(function() {
+			var num = $(this).find('.on').length;
+			if(num>0){
+				var c_h = $(this).find('.on').offset().top;
+				var c_top = $(this).find('.on').scrollTop();
+				// console.log($(this).scrollTop());
+				console.log(c_h);
+				if($(this).scrollTop() > c_h){
+					// $(this).find('.on').addClass('cate_fixed');
+				}else{
+					// $(this).find('.on').removeClass('cate_fixed');
+				}
+			}
+		});
+
+		$("#cate-scroll>li").on('click','>a',function(){
+			var _this = this;
+			if($(_this).parent().siblings().hasClass('cate_fixed')){
+				$(_this).parent().siblings().removeClass('cate_fixed');
+			}
+			var top = $(this).parent().scrollTop()-49;
+			if($(_this).parent().hasClass('on')){
+				if( $(_this).parent().find('.sun-tab').height() == 0){
+					$(_this).parent().find('.sun-tab').css({'height':'auto'});
+				}else{
+					$(_this).parent().find('.sun-tab').css({'height':'0'});
+				}
+			}else{
+				$(_this).parent().addClass('on');
+				$(_this).parent().siblings().removeClass("on");
+				$(_this).parent().find('.sun-tab').css({'height':'auto'});
+				$(_this).parent().siblings().find('.sun-tab').css({'height':'0'});
+
+				$(_this).parents('#cate-scroll').removeClass('cate_fixed');	
+			}
+		})
+		
+		$('.sun-tab li').click(function(){
+			if($(this).hasClass('active')){
+				$(this).removeClass('active');
+			}else{
+				$(this).addClass('active').siblings().removeClass('active');
+			}
+		});
+
+
+		// 控制分类、品牌、排序菜单的显示与隐藏
+		$('.filter').on('click',function(){
+			if($('.contentb').is(':hidden')){
+				$('.contentb').show();
+				$("#nav_Content .shade").show();
+				$('html,body').addClass("over");
+				$(this).addClass('active').siblings().removeClass('active');
+				$(this).siblings('.init').find('img').attr('src','images/icon_big_down.png');
+				$(this).find('img').attr('src','images/icon_filtrate_red.png');
+			}else{
+				$('.contentb').hide();
+				$("#nav_Content .shade").hide();
+				$('html,body').removeClass("over");
+				$('.contentb').siblings().hide();
+				$(this).removeClass('active');
+				$(this).find('img').attr('src','images/icon_filtrate.png');
+
+			}
+		})
+		
+
+		$('#top_Nav').on('click','.init',function(){
+			var index=$(this).index();
+			if($(this).hasClass('active')){
+				$(this).removeClass('active');
+				$(this).find('img').attr('src','images/icon_big_down.png');
+				$('#nav_Content .content').hide();
+				$("#nav_Content .shade").hide();
+				$('html,body').removeClass("over");
+
+			}else{ 
+				$(this).addClass('active').siblings().removeClass('active');
+				$(this).find('img').attr('src','images/icon_small_up.png').parent().siblings('.init').find('img').attr('src','images/icon_big_down.png');
+				$('#nav_Content .content').eq(index).show().siblings().hide();
+				$("#nav_Content .shade").show();
+				$('html,body').addClass("over");
+				$('.filter').find('img').attr('src','images/icon_filtrate.png');
+			}
+		});
+		
+		
+
+		//点击遮罩层、确定，隐藏显示的内容
+		$("#nav_Content .shade,.content .sure").click(function(){
+			hideAll();
+		});
+
+		//选择分类、品牌、排序后的样式
+		$(".contenta,.contentb").on('click','li',function(){
+			if($(this).find("a").hasClass("change")){
+				$(this).find("a").removeClass("change")
+			}else{
+				$(this).find("a").addClass("change");
+			}
+		});
+		$("#nav_Content .paixu li").click(function(){
+			var idx=$(this).index();
+			if($(this).find("a").hasClass("act")){
+				$(this).find("a").removeClass("act");
+			}else{
+				$(this).find("a").addClass("act").parent().siblings().find("a").removeClass("act");
+				//选择排序后 1s隐藏排序内容
+				setTimeout(hideAll,1000);
+			}
+		});	
+
+
+	})
+	</script>
+</div>	
+</body>
+</html>
