@@ -1,346 +1,328 @@
-@charset "utf-8";
-@import url("common/reset.css"); /* The default styles */
+@charset "utf-9";
+@import "common/reset.css";
 
-html, body {
-	width: 100%;
-	max-width: 750px; 
-	min-width: 320px;
-	/*height: 100%;  */
-	margin: 0 auto; 
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+html,body{
+	min-width:320px;
+	max-width:750px;
+	margin: 0 auto;
 }
-#signInBox {
-	height: 15.72rem;
+
+.main{
+	width:100%;
 	background: url(../images/signIn/signIn_bg.png) no-repeat;
-	background-size: 100%;
+	background-size: 100% 100%;
+	height:15.6rem;
 }
 
-.signIn-thead {
-	height: 2.5rem;
-	padding: .26rem;
+.top{
+	margin:0 0.26rem;
+	padding: 0.2rem 0;
 }
-.signIn-thead > .antBean {
-	line-height: .4rem;
-	padding-left: .4rem;
-	color: #E6C3FC;
+.top p.txt{
+	padding-left:0.4rem;
+	font-size: 0.24rem;
+	color: #e6c3fc;
 	background: url(../images/signIn/signIn_antBean.png) no-repeat left center;
-	background-size: .26rem;
+	background-size: 0.3rem 0.24rem;
 }
-.signIn-thead > .antBean > b {
-	font-weight: 700;
+.top img{
+	display:block;
+	width:84%;
+	margin: 0.4rem 8% 0;	
 }
-.signIn-thead > .title {
-	display: block;
-	width: 5.66rem;
-	height: .81rem;
-	margin: .28rem auto .06rem;
-}
-.signIn-thead > .text {
-	font-size: .3rem;
-	color: #E6C3FC;
-	text-align: center;
+.top .hint{
+	width:100%;
+	font-size: 0.3rem;
+	color: #e6c3fc;
+	text-align:center;
+	height: 0.6rem;
+	line-height: 0.6rem;
 }
 
-
-
-
-
-.signIn-path {
+.container{
 	width: 100%;
-	height: 9.23rem;
-	background: url(../images/signIn/signIn_path.png) no-repeat;
-	background-size: 100%;
-	position: relative;
+	height: 9.2rem;
+	background: url(../images/signIn/signIn_path.png) no-repeat left center;
+	background-size: 100% 100%;
+	margin-top: 0.6rem;
+	position:relative;
 }
-.path-items {
-	width: 100%;
-	height: 8.38rem;
-	padding: .2rem 0 .66rem;
-	position: relative;
+.container .ant {
+	position:absolute;
+	top: -0.76rem;
+	left: 0.5rem;
+	z-index:10;
 }
-.path-items > .Ant-Man {
-	width: 1.06rem;
-	height: 1.58rem;
-	position: absolute;
-	left: .46rem;
-	top: -.6rem;
-	z-index: 99;
+.container .ant img{
+	width: 1.1rem;
+	height: 1.62rem;
 }
-.path-items > .Ant-Man > img {
-	width: 1.06rem;
-	height: 1.58rem;
+.container ul li{
+	display:inline-block;
+	position:absolute;
 }
 
-.datyMain > li > span {
-	display: block;
-	font-size: 0;
-	
+.container ul li .tips{
+	width:1.7rem;
+	height:0.5rem;
+	position:absolute;
+	display:none;
+	color: #982cd7;
+	font-size:0.24rem;
+	text-align:center;
+	line-height:0.48rem;
+
 }
-.datyMain > li > .signIn-Btn {	
-	display: none;
-	width: 1.31rem;
-	height: 1.37rem;
+.container ul li.first .tips{
+	background: url(../images/signIn/tip2.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.1rem;
+	left:1.2rem;
+}
+.container ul li.two .tips{
+	background: url(../images/signIn/tip1.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.5rem;
+	left:-1.2rem;
+}
+.container ul li.three .tips{
+	background: url(../images/signIn/tip1.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.6rem;
+	left:-1.6rem;
+}
+.container ul li.four .tips{
+	background: url(../images/signIn/tip2.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.1rem;
+	left:0.4rem;
+}
+.container ul li.five .tips{
+	background: url(../images/signIn/tip2.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.1rem;
+	left:0.4rem;
+}
+.container ul li.six .tips{
+	background: url(../images/signIn/tip1.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.3rem;
+	left:-1.5rem;
+}
+.container ul li.end .tips{
+	background: url(../images/signIn/tip2.png) no-repeat;
+	background-size: 100% 100%;
+	top:-1.6rem;
+	left:1rem;
+}
+.container ul li p{
+	width:1.4rem;
+	height:1.44rem;
 	background: url(../images/signIn/signIn_btn.png) no-repeat;
 	background-size: 100% 100%;
-	position: absolute;
-	left: .08rem;
-	top: -.36rem;
+	display:none;
+	font-size:0;
+	position:absolute;
+	left:-0.28rem;
+	top:-1.25rem;
 }
-/*.datyMain > .startLine {
-	width: 1.5rem;
-	height: 1.66rem;
-	position: absolute;
-	left: 0;
-	top: .2rem;
-}*/
+.container ul li.end p{
+	top:-2rem;
+}
+.container ul li span{font-size: 0;}
+.container ul li.doing p{
+	display:block;
+}
+.container ul li.done p{
+	display:none;
+}
 
-/* 第一天 */
-.datyMain > .dayOne {
-	width: 1.36rem;
-	height: 1.6rem;	
-	padding-top: .56rem;
-	position: absolute;
-	left: 1.8rem;
-	top: .24rem;
+.container ul li.first{
+	position:absolute;
+	top:1rem;
+	left:2.1rem
 }
-.datyMain > .dayOne > .dayTxt {
-	width: .76rem;
-	height: .44rem;
-	margin: .58rem auto;
-	overflow: hidden;
-}
-.datyMain > li.dayOne.doing > .dayTxt {	
+.container ul li.first span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_dayOne_doing.png) no-repeat;
 	background-size: 100% 100%;
+	margin:0 auto;
 }
-.datyMain > li.dayOne.done > .dayTxt {	
+.container ul li.first.done span{
 	background: url(../images/signIn/signIn_dayOne_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-/* 第二天 */
-.datyMain > .dayTwo {
-	width: 1.34rem;
-	height: 1.58rem;
-	padding-top: .56rem;
-	position: absolute;
-	left: 4.5rem;
-	top: 1.1rem;
+
+.container ul li.two{
+	position:absolute;
+	top:1.96rem;
+	left:4.8rem;
 }
-.datyMain > .dayTwo > .dayTxt {
-	width: .83rem;
-	height: .45rem;
+.container ul li.two span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_dayTwo_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .58rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > li.dayTwo.doing > .dayTxt {	
+.container ul li.two.doing span{
 	background: url(../images/signIn/signIn_dayTwo_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.dayTwo.done > .dayTxt {	
+.container ul li.two.done span{
 	background: url(../images/signIn/signIn_dayTwo_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-/* 第三天 */
-.datyMain > .dayThree {
-	width: 1.26rem;
-	height: 1.8rem;
-	padding-top: .56rem;
-	position: absolute;
-	left: 5.84rem;
-    top: 3rem;
+.container ul li.three{
+	position:absolute;
+	top:3.8rem;
+	left:6.2rem;
 }
-.datyMain > .dayThree > .dayTxt {
-	width: .6rem;
-	height: .85rem;
+.container ul li.three span{
+	display:inline-block;
+	width:0.6rem;
+	height:0.65rem;
 	background: url(../images/signIn/signIn_dayThree_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .475rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > li.dayThree.doing > .dayTxt {	
+.container ul li.three.doing span{
 	background: url(../images/signIn/signIn_dayThree_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.dayThree.done > .dayTxt {	
+.container ul li.three.done span{
 	background: url(../images/signIn/signIn_dayThree_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-
-/* 第四天 */
-.datyMain > .dayFour {
-	width: 1.5rem;
-	height: 1.48rem;
-	padding-top: .56rem;
-	position: absolute;
-	left: 4.32rem;
-	top: 3.52rem;
+.container ul li.four{
+	position:absolute;
+	top:4.3rem;
+	left:4.54rem;
 }
-.datyMain > .dayFour > .dayTxt {
-	width: .81rem;
-	height: .46rem;
+.container ul li.four span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_dayFour_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .475rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > li.dayFour.doing > .dayTxt {	
+.container ul li.four.doing span{
 	background: url(../images/signIn/signIn_dayFour_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.dayFour.done > .dayTxt {	
+.container ul li.four.done span{
 	background: url(../images/signIn/signIn_dayFour_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-/* 第五天 */
-.datyMain > .dayFive {
-	width: 1.4rem;
-	height: 1.74rem;
-	padding-top: .56rem;
-	position: absolute;
-	left: 2.1rem;
-	top: 2.96rem;
+.container ul li.five{
+	position:absolute;
+	top:3.7rem;
+	left:2.4rem;
 }
-.datyMain > .dayFive > .dayTxt {
-	width: .81rem;
-	height: .46rem;
+.container ul li.five span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_dayFive_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .475rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > li.dayFive.doing > .dayTxt {	
+.container ul li.five.doing span{
 	background: url(../images/signIn/signIn_dayFive_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.dayFive.done > .dayTxt {	
+.container ul li.five.done span{
 	background: url(../images/signIn/signIn_dayFive_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-/* 第六天 */
-.datyMain > .daySix {
-	width: 1.4rem;
-	height: 1.5rem;
-	padding-top: .8rem;
-	position: absolute;
-	left: 2.06rem;
-    top: 5.04rem;
+.container ul li.six{
+	position:absolute;
+	top:6rem;
+	left:2.36rem;
 }
-.datyMain > .daySix > .dayTxt {
-	width: .81rem;
-	height: .46rem;
+.container ul li.six span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_daySix_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .475rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > li.daySix.doing > .dayTxt {	
+.container ul li.six.doing span{
 	background: url(../images/signIn/signIn_daySix_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.daySix.done > .dayTxt {	
+.container ul li.six.done span{
 	background: url(../images/signIn/signIn_daySix_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-/* 第七天 */
-.datyMain > .daySeventh {
-	width: 1.4rem;
-	height: 1.56rem;
-	padding-top: .8rem;
-	position: absolute;
-	left: 4.28rem;
-    top: 5.64rem;
+.container ul li.end{
+	position:absolute;
+	top:6.6rem;
+	left:4.6rem;
 }
-.datyMain > .daySeventh > .dayTxt {
-	width: .81rem;
-	height: .46rem;
+.container ul li.end span{
+	display:inline-block;
+	width:0.8rem;
+	height:0.56rem;
 	background: url(../images/signIn/signIn_daySeventh_do.png) no-repeat;
 	background-size: 100% 100%;
-	margin: .475rem auto;
-	overflow: hidden;
+	margin:0 auto;
 }
-.datyMain > .daySeventh > .redPacket {
-	width: 2.24rem;
-	height: 1.62rem;
-	background: url(../images/signIn/signIn_redPacket.png) no-repeat;
-	background-size: 100% 100%;
-	position: absolute;
-	left: 0;
-	top: .1rem;
-}
-.datyMain > li.daySeventh > .signIn-Btn {
-	top: -1rem;
-}
-.datyMain > li.daySeventh.doing > .dayTxt {	
+.container ul li.end.doing span{
 	background: url(../images/signIn/signIn_daySeventh_doing.png) no-repeat;
 	background-size: 100% 100%;
 }
-.datyMain > li.daySeventh.done > .dayTxt {	
+.container ul li.end.done span{
 	background: url(../images/signIn/signIn_daySeventh_done.png) no-repeat;
 	background-size: 100% 100%;
 }
 
-
-.datyMain > li.doing > .signIn-Btn {
-	display: block;
-}
-.datyMain > li.done > .signIn-Btn,
-.datyMain > li.done > .redPacket {
-	display: none;
-}
-
-
-
-.signIn-rule {
-	padding: 0 .7rem;
+.redPacket{
+	width:1.8rem;
+	height:1.4rem;
+	background: url(../images/signIn/signIn_redPacket.png) no-repeat;
+	background-size: 100% 100%;
+	position:absolute;
+	top:-0.76rem;
+	left:-0.24rem;
 }
 
-.signIn-rule > img.ruleTitle {
-	display: block;
-	width: 4.27rem;
-	height: .29rem;
-	margin: 0 auto;
+.regular{
+	width: 100%;
 }
-.signIn-rule > ul.ruleText {
-	padding: .36rem 0;
+.regular img{
+	width:60%;
+	margin: 0 20%;
 }
-.signIn-rule > ul.ruleText > li {
-	line-height: .4rem;
-	color: #FFF;
-	font-size: .24rem;
+.regular ul{
+	width:82%;
+	margin: 20px 9%;
+}
+.regular ul li{
+	font-size: 0.24rem;
+	color: #fff;
+	line-height:0.44rem;
 }
 
 
 
-/* 弹框 */
-.layui-layer-tips .layui-layer-content {
-	color: #58187E !important;
-	line-height: 18px !important;
-	border-radius: 22px !important;
-	padding: 3px 12px !important;
-}
-.layui-layer-tips i.layui-layer-TipsL, 
-.layui-layer-tips i.layui-layer-TipsR {
-	top: 4px !important;
-}
-.layui-layer-tips i.layui-layer-TipsR {
-	left: -5px !important;
-}
-.layui-layer-tips i.layui-layer-TipsL {
-	right: -4px !important;
-}
 .layui-Complete {
 	background-color: transparent !important;
 	box-shadow: 1px 1px 50px rgba(0,0,0,0) !important;
 }
 .layui-Complete img {
-	width: 248px;
-	height: 279px;
+    width: 248px;
+    height: 279px;
+    margin: 0 25px;
 }

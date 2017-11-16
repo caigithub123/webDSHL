@@ -1,72 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no"> 
-	<title>签到有礼</title>
+    <meta name="format-detection" content="telephone=no">
+	<title>签到</title>
 	<link rel="stylesheet" type="text/css" href="css/signIn.css">
-	
-	<script type="text/javascript" src="js/lib/setFontSize.min.js"></script>
-	<script type="text/javascript" src="./js/lib/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="./js/layer/layer.js"></script>
+	<script type="text/javascript" src="./js/javascript.setfontsize.js"></script>
 </head>
 <body>
-<div class="container" id="signInBox">
-	<div class="signIn-thead">
-		<p class="antBean">当前蚂蚁豆：<b>600</b></p>
-		<img src="images/signIn/signIn_title.png" class="title">
-		<p class="text">连续签到领蚂蚁豆！</p>
-	</div>
-	<div class="signIn-path">
-		<div class="path-items">
-			<div class="Ant-Man" id="Ant-Man"><img src="images/signIn/signIn_ant-1.png" id="antImg"></div>
-			<ul class="datyMain">
-				<li class="dayOne doing">
-					<span class="dayTxt">第一天</span>
-					<span class="signIn-Btn">点击签到</span>
+	<div class="main">
+		<div class="top">
+			<p class="txt">当前蚂蚁豆:<span>300</span></p>
+			<img src="images/signIn/signIn_title.png" alt="">
+			<p class="hint">连续签到领蚂蚁豆</p>
+		</div>
+		<div class="container">
+			<span class="ant"><img src="images/signIn/signIn_ant-1.png" alt=""></span>
+			<ul>
+				<li class="first doing">
+					<p class="iconClick">点击签到</p>
+					<span>第一天</span>
+					<div class="tips">签到完成！</div>
 				</li>
-				<li class="dayTwo">
-					<span class="dayTxt">第二天</span>
-					<span class="signIn-Btn">点击签到</span>
+				<li class="two">
+					<p class="iconClick">点击签到</p>
+					<span>第二天</span>
+					<div class="tips">签到完成！</div>
 				</li>
-				<li class="dayThree">
-					<span class="dayTxt">第三天</span>
-					<span class="signIn-Btn">点击签到</span>
+				<li class="three">
+					<p class="iconClick">点击签到</p>
+					<span>第三天</span>
+					<div class="tips">签到完成！</div>
 				</li>
-				<li class="dayFour">
-					<span class="dayTxt">第四天</span>
-					<span class="signIn-Btn">点击签到</span>
-				</li>				
-				<li class="dayFive">
-					<span class="dayTxt">第五天</span>
-					<span class="signIn-Btn">点击签到</span>
+				<li class="four">
+					<p class="iconClick">点击签到</p>
+					<span>第四天</span>
+					<div class="tips">签到完成！</div>
 				</li>
-				<li class="daySix">
-					<span class="dayTxt">第六天</span>
-					<span class="signIn-Btn">点击签到</span>
+				<li class="five">
+					<p class="iconClick">点击签到</p>
+					<span>第五天</span>
+					<div class="tips">签到完成！</div>
 				</li>
-				<li class="daySeventh">
-					<span class="dayTxt">第七天</span>
-					<span class="redPacket"></span>
-					<span class="signIn-Btn">点击签到</span>
+				<li class="six">
+					<p class="iconClick">点击签到</p>
+					<span>第六天</span>
+					<div class="tips">签到完成！</div>
+				</li>
+				<li class="end">
+					<p class="iconClick">点击签到</p>
+					<span>第七天</span>
+					<div class="tips">任务完成！</div>
+					<div class="redPacket"></div>
 				</li>
 			</ul>
 		</div>
+		<div class="regular">
+			<img src="images/signIn/signIn_ruleTit.png" alt="">
+			<ul>
+				<li>1. 每日签到，+20蚂蚁豆 </li>
+				<li>2. 连续签到7天，+300蚂蚁豆 </li>
+				<li>3. 如果中断，按每日签到实际天数送蚂蚁豆 </li>
+				<li>4. 如果完成一个连续签到周期，则重新开始下一周期。</li>
+			</ul>	
+		</div>
 	</div>
-	<div class="signIn-rule">
-		<img src="images/signIn/signIn_ruleTit.png" class="ruleTitle">
-		<ul class="ruleText">
-			<li>1. 每日签到，+20蚂蚁豆 </li>
-			<li>2. 连续签到7天，+300蚂蚁豆 </li>
-			<li>3. 如果中断，按每日签到实际天数送蚂蚁豆 </li>
-			<li>4. 如果完成一个连续签到周期，则重新开始下一周期。</li>
-		</ul>
-	</div>
-</div>
-<script type="text/javascript" src="js/signIn_Animate.js"></script>
-
+	<script type="text/javascript">
+	$(function(){
+		$('.container').on('click','.iconClick',function(){
+			var liParent = $(this).parent();
+			var idx = $(liParent).index()+1;
+			var ant = $(".container").find('.ant');
+			var tip = $(liParent).find('.tips');
+			var tip_prev = $(liParent).prev().find('.tips');
+			$(liParent).addClass('done').removeClass('doing');
+			$(tip_prev).hide();
+			switch (idx){
+				case 1 :
+					$(ant).animate({'top':-0.1+'rem','left':2.1+'rem'},500,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第一天签到完成，获得20个豆');
+					});
+					break;
+				case 2:
+					$(ant).animate({'top':0.9+'rem','left':4.76+'rem'},800,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第二天签到完成，获得20个豆');
+					});
+					break;
+				case 3:
+					$(ant).animate({'top':1.3+'rem','left':6.1+'rem'},400,function(){
+						$(ant).find('img').attr('src','images/signIn/signIn_ant-2.png');
+						
+					}).animate({'top':3+'rem','left':6.1+'rem'},300,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第三天签到完成，获得20个豆');
+					});
+					break;
+				case 4:
+					$(ant).animate({'top':3.8+'rem','left':5.6+'rem'},300)
+					.animate({'top':3.4+'rem','left':4.4+'rem'},300,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第四天签到完成，获得20个豆');
+					});
+					break;
+				case 5:
+					$(ant).animate({'top':2.9+'rem','left':2.3+'rem'},600,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第五天签到完成，获得20个豆');
+					});
+					break;
+				case 6:
+					$(ant).animate({'top':2.7+'rem','left':0.8+'rem'},300,function(){
+						$(ant).find('img').attr('src','images/signIn/signIn_ant-1.png');
+					})
+					.animate({'top':4.54+'rem','left':0.8+'rem'},500)
+					.animate({'top':4.9+'rem','left':2.4+'rem'},400,function(){
+						$(liParent).next().addClass('doing');
+						$(tip).show(200);
+						$('.hint').text('第六天签到完成，获得20个豆');
+					});
+					break;
+				case 7:
+					$(ant).animate({'top':5.4+'rem','left':4.6+'rem'},700,function(){
+						$(liParent).next().addClass('doing');
+						$('.redPacket').hide();
+						$(tip).show(200);
+						$('.hint').text('任务完成，获得了300个豆');
+						setTimeout(function(){
+							layer.open({
+								type: 1,
+								title: false,
+								skin: 'layui-Complete', //样式类名
+								closeBtn: 0, //不显示关闭按钮
+								anim: 2,
+								shade: 0.6,
+								scrollbar: false,
+								shadeClose: true, //是否点击遮罩关闭
+								content: '<img src="images/signIn/signIn_MissionComplete.png">'
+							});
+						},400)
+					});
+					break;		
+			}
+		});
+	
+		
+	})
+	</script>
 </body>
 </html>
